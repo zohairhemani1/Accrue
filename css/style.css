@@ -69,8 +69,11 @@ font-face{
     height: 45px;
     z-index: 4;
     background: none repeat scroll 0% 0% #666;
-    width: 101%;
+	width: 100%;
 	margin-bottom: 58px;
+	margin-left: -8px;
+	padding-right: 16px;
+	margin-top: -8px;
 }
 .name{
  	text-align: center;
@@ -92,8 +95,7 @@ font-face{
 
 }
 .email_form{
-	padding-left: 7px;
-	width: 160%;
+	width: 95%;
 	background: none repeat scroll 0% 0% #CCC;
 	height: 30px;
 	font-size: 16px;
@@ -106,8 +108,7 @@ font-face{
 	border-radius: 3px;
 }
 .password_form{
-	padding-left: 7px;
-	width: 160%;
+	width: 95%;
 	background: none repeat scroll 0% 0% #CCC ;
 	height: 40px;
 	color:#7f7f81;
@@ -127,7 +128,7 @@ font-face{
 	color:#66656a;
 	background:#e5e5e5;
 	border:1px solid #53acbc;
-	width:227%;
+	width:83%;
 	text-align:center;
 	height:37px;
 	font-size:22px;
@@ -137,9 +138,8 @@ font-face{
 #Signup {
     position: relative;
     height: 59px;
-    width: 31%;
     margin-top: 100px;
-    margin-left: 13%;
+    margin-left: 12%;
     padding: 0px;
 
 }
@@ -147,40 +147,34 @@ font-face{
     position: relative;
     height: 37px;
     z-index: 11;
-    width: 56%;
-    margin-left: 6%;
+    margin-left: 5%;
 }
 #Password {
     position: relative;
     height: 37px;
     z-index: 11;
-    width: 56%;
     padding-top:  62px;
-    margin-left: 4%;
+    margin-left: 5%;
 }
 #confirm-password{
 	position: relative;
 	height: 37px;
-	z-index: 12;
-	width: 56%;	
+	z-index: 12;	
 	margin-left: 5%;
-	margin-top: 72px;
+	margin-top: 60px;
 }
 .confirm{
 	font-size: 16px;
 	color:#7f7f81;
 	font-family:"Myriad Pro";
-	margin-left: 2%;
 }
 .confirm_form{
-	padding-left: 7px;
 	background:#CCC;
 	height:40px;
 	font-family:"Myriad Pro";
 	font-size:14px;
-	margin-top: 1%;
-	width: 160%;
-	margin-left: 2%;
+	margin-top: 6px;
+	width: 95%;
 	border: none;
 	border-top: 1px solid #797979;
 	border-radius: 3px;
@@ -191,9 +185,8 @@ font-face{
 	font-family:"Myriad Pro";
 }
 .form{
-	padding-left: 7px;
-	width: 158%;
-	color:#7f7f81;
+	width: 95%;
+	color: #7f7f81;
 	background: none repeat scroll 0% 0% #CCC;
 	font-size: 14px;
 	border: none;
@@ -206,35 +199,31 @@ font-face{
 
 #Amount {
 	position: relative;
-	margin-left: 17px;
-	margin-top: 40px;
+	margin-left: 5%;
 	height: 37px;
 	z-index: 10;
-	width: 56%;
 }
 
 #Description {
 	position: relative;
-	margin-left: 17px;
+	margin-left: 5%;
 	margin-top: 70px;
 	height: 47px;
 	z-index: 17;
-	width: 56%;
 	font-size: 23px;
 }
 #Submit {
 	position: relative;
-	margin-left: 222px;
-	margin-top: 135px;
+	margin-left: 12%;
+	margin-top: 160px;
 	height: 59px;
 	z-index: 15;
-	width: 88%;
 }
 .submit {
 	position: relative;
 	height: 40px;
 	z-index: 15;
-	width: 164%;
+	width: 83%;
 	font-size: 22px;
 	color:#66656a;
 	background:e5e5e5;
@@ -245,14 +234,12 @@ font-face{
 	background:#e5e5e5;
 	border:1px solid #53acbc;
 	height: 40px;
-	width: 84%;
+	width: 88%;
 	font-size: 22px;
-	margin-left: -181px;
 	font-family: "Myriad Pro";
 }
 .detail{
-	padding-left: 7px;
-	width:160%;
+	width:95%;
 	font-size:16px;
 	font-family:"Myriad Pro";
 	margin-top:1%;
@@ -268,7 +255,6 @@ font-face{
   margin-top: 11px;
   height: 91px;
   z-index: 7;
-  width: 56%;
 }
 
 #TaxesWithheld{
@@ -277,7 +263,6 @@ font-face{
   margin-top: -50px;
   height: 87px;
   z-index: 8;
-  width: 56%;
 }
 
 #Paybythesecond{
@@ -286,7 +271,6 @@ font-face{
   margin-left: 23px;
   height: 91px;
   z-index: 9;
-  width: 56%;
 }
 
 #Paybytheminute{
@@ -295,7 +279,6 @@ font-face{
   margin-left: 23px;
   height: 91px;
   z-index: 10;
-  width: 56%;
 }
 
 #HourlyPay{
@@ -304,7 +287,6 @@ font-face{
   margin-left: 23px;
   height: 91px;
   z-index: 11;
-  width: 56%;
 }
 
 #DailyPay{
@@ -313,58 +295,51 @@ font-face{
   margin-left: 23px;  
   height: 91px;
   z-index: 12;
-  width: 56%;
 }
 
 #Salary{
 	position: relative;
 	margin-left: 23px;
 	z-index: 23;
-	width: 56%;
 	margin-top: -41px;
 }
 
 #Home {
-  position: relative;
+    position: relative;
 	margin-left: 33px;
 	margin-top: -47px;
-  height: 37px;
-  z-index: 15;
-  width: 47%;
+  	height: 37px;
+  	z-index: 15;
 }
 #AnnualIncome {
 	position: relative;
 	height: 37px;
 	z-index: 10;
-	width: 56%;
-	margin-left: 15px;
+	margin-left: 5%;
 	}
 #PayFrequency {
 	position: relative;
 	height: 47px;
 	z-index: 13;
-	margin-left: 15px;
-	margin-top: 57px;
-	width: 57%;
+	margin-left: 5%;
+	margin-top: 62px;
 }
 #PayCheck {
 	position: relative;
 	height: 47px;
 	z-index: 17;
-	margin-left: 16px;
-	margin-top: 43px;
-	width: 56%;
+	margin-left: 5%;
+	margin-top: 62px;
 }
 #info-Submit {
 	position: relative;
 	height: 37px;
 	z-index: 15;
-	width: 85%;
-	margin-left: 70%;
-	margin-top: 64px;
+	margin-left: 12%;
+	margin-top: 90px;
 }
 .login{
-	width: 226%;
+	width: 88%;
 	background:#e5e5e5 ;
 	font-size: 22px;
 	color:#66656a;
@@ -378,7 +353,7 @@ font-face{
 	height: 59px;
 	z-index: 10;
 	margin-top: 90px;
-	margin-left: 48px;
-	width: 31%;
+	margin-left: 12%;
+
 }
 	
