@@ -16,7 +16,6 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: -1px;
 padding: 0px;
 border: 0px none;
 font-family: inherit;
@@ -82,6 +81,8 @@ font-face{
 }
 .imj{
 	margin-top:11px;
+	margin-left:auto;
+	margin-right:auto;
 }
 .email{
 	font-size:16px;
@@ -137,7 +138,7 @@ font-face{
     position: relative;
     height: 59px;
     width: 31%;
-    margin-top: 23%;
+    margin-top: 100px;
     margin-left: 13%;
     padding: 0px;
 
@@ -147,24 +148,23 @@ font-face{
     height: 37px;
     z-index: 11;
     width: 56%;
-    margin-bottom: 5%;
-    margin-left: 4%;
+    margin-left: 6%;
 }
 #Password {
     position: relative;
     height: 37px;
     z-index: 11;
     width: 56%;
-	padding-top: 9%;
+    padding-top:  62px;
     margin-left: 4%;
 }
 #confirm-password{
 	position: relative;
 	height: 37px;
 	z-index: 12;
-	width: 56%;
-	margin-left: 3%;
-	margin-top: 15%;
+	width: 56%;	
+	margin-left: 5%;
+	margin-top: 72px;
 }
 .confirm{
 	font-size: 16px;
