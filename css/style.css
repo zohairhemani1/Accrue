@@ -1,0 +1,384 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: -1px;
+padding: 0px;
+border: 0px none;
+font-family: inherit;
+font-style: inherit;
+font-variant: inherit;
+font-weight: inherit;
+line-height: inherit;
+font-size-adjust: inherit;
+font-stretch: inherit;
+-moz-font-feature-settings: inherit;
+-moz-font-language-override: inherit;
+vertical-align: baseline;
+font-size: 49px;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+.clr { clear: both; font-size; 0; overflow: hidden; height: 0; }
+/* main */
+
+font-face{
+	font-family:"Myriad Pro";
+	color:#66656a;
+	src:url(../font/Museo300-Regular.otf)
+}
+#nav{
+    position: relative;
+    height: 45px;
+    z-index: 4;
+    background: none repeat scroll 0% 0% #666;
+    width: 101%;
+	margin-bottom: 58px;
+}
+.name{
+ 	text-align: center;
+ 	font-size: 20px;
+	color:#ccc;
+ 	font-family: "Myriad Pro";
+ 	margin-left: 35%;
+}
+.imj{
+	margin-top:11px;
+}
+.email{
+	font-size:16px;
+	color:#7f7f81;
+	font-family: "Myriad Pro";
+	margin-bottom: 14px;
+
+}
+.email_form{
+	padding-left: 7px;
+	width: 160%;
+	background: none repeat scroll 0% 0% #CCC;
+	height: 30px;
+	font-size: 16px;
+	color:#66656a;
+	font-family: "Myriad Pro";
+	margin-top: 6px;
+	height: 40px;
+	border: none;
+	border-top: 1px solid #797979;
+	border-radius: 3px;
+}
+.password_form{
+	padding-left: 7px;
+	width: 160%;
+	background: none repeat scroll 0% 0% #CCC ;
+	height: 40px;
+	color:#7f7f81;
+	font-size: 16px;
+	font-family: "Myriad Pro";
+	margin-top: 6px;
+	border: none;
+	border-top: 1px solid #797979;
+	border-radius: 3px;
+	}
+.password{
+	color:#7f7f81;
+	font-size:16px;
+	font-family:"Myriad Pro";
+}
+.signup{
+	color:#66656a;
+	background:#e5e5e5;
+	border:1px solid #53acbc;
+	width:227%;
+	text-align:center;
+	height:37px;
+	font-size:22px;
+	font-family:"Myriad Pro";
+}
+
+#Signup {
+    position: relative;
+    height: 59px;
+    width: 31%;
+    margin-top: 23%;
+    margin-left: 13%;
+    padding: 0px;
+
+}
+#Email {
+    position: relative;
+    height: 37px;
+    z-index: 11;
+    width: 56%;
+    margin-bottom: 5%;
+    margin-left: 4%;
+}
+#Password {
+    position: relative;
+    height: 37px;
+    z-index: 11;
+    width: 56%;
+	padding-top: 9%;
+    margin-left: 4%;
+}
+#confirm-password{
+	position: relative;
+	height: 37px;
+	z-index: 12;
+	width: 56%;
+	margin-left: 3%;
+	margin-top: 15%;
+}
+.confirm{
+	font-size: 16px;
+	color:#7f7f81;
+	font-family:"Myriad Pro";
+	margin-left: 2%;
+}
+.confirm_form{
+	padding-left: 7px;
+	background:#CCC;
+	height:40px;
+	font-family:"Myriad Pro";
+	font-size:14px;
+	margin-top: 1%;
+	width: 160%;
+	margin-left: 2%;
+	border: none;
+	border-top: 1px solid #797979;
+	border-radius: 3px;
+}
+.text{
+	color:#7f7f81;
+	font-size:16px;
+	font-family:"Myriad Pro";
+}
+.form{
+	padding-left: 7px;
+	width: 158%;
+	color:#7f7f81;
+	background: none repeat scroll 0% 0% #CCC;
+	font-size: 14px;
+	border: none;
+	border-top: 1px solid #797979;
+	border-radius: 3px;
+	font-family: "Myriad Pro";
+	margin-top: 6px;
+	height: 40px;
+}
+
+#Amount {
+	position: relative;
+	margin-left: 17px;
+	margin-top: 40px;
+	height: 37px;
+	z-index: 10;
+	width: 56%;
+}
+
+#Description {
+	position: relative;
+	margin-left: 17px;
+	margin-top: 70px;
+	height: 47px;
+	z-index: 17;
+	width: 56%;
+	font-size: 23px;
+}
+#Submit {
+	position: relative;
+	margin-left: 222px;
+	margin-top: 135px;
+	height: 59px;
+	z-index: 15;
+	width: 88%;
+}
+.submit {
+	position: relative;
+	height: 40px;
+	z-index: 15;
+	width: 164%;
+	font-size: 22px;
+	color:#66656a;
+	background:e5e5e5;
+	border:1px solid #53acbc;
+}
+.button{
+	color:#66656a;
+	background:#e5e5e5;
+	border:1px solid #53acbc;
+	height: 40px;
+	width: 84%;
+	font-size: 22px;
+	margin-left: -181px;
+	font-family: "Myriad Pro";
+}
+.detail{
+	padding-left: 7px;
+	width:160%;
+	font-size:16px;
+	font-family:"Myriad Pro";
+	margin-top:1%;
+	background:#ccc;
+	color:#7f7f81;
+	border: none;
+	border-top: 1px solid #797979;
+	border-radius: 3px;
+}
+#Incomeaftertaxes{
+  position: relative;
+  margin-left: 23px;
+  margin-top: 11px;
+  height: 91px;
+  z-index: 7;
+  width: 56%;
+}
+
+#TaxesWithheld{
+  position: relative;
+  margin-left: 23px;
+  margin-top: -50px;
+  height: 87px;
+  z-index: 8;
+  width: 56%;
+}
+
+#Paybythesecond{
+  position: relative;
+  margin-top: -46px;
+  margin-left: 23px;
+  height: 91px;
+  z-index: 9;
+  width: 56%;
+}
+
+#Paybytheminute{
+  position: relative;
+  margin-top: -51px;
+  margin-left: 23px;
+  height: 91px;
+  z-index: 10;
+  width: 56%;
+}
+
+#HourlyPay{
+  position: relative;
+  margin-top: -50px;
+  margin-left: 23px;
+  height: 91px;
+  z-index: 11;
+  width: 56%;
+}
+
+#DailyPay{
+  position: relative;
+  margin-top: -49px;
+  margin-left: 23px;  
+  height: 91px;
+  z-index: 12;
+  width: 56%;
+}
+
+#Salary{
+	position: relative;
+	margin-left: 23px;
+	z-index: 23;
+	width: 56%;
+	margin-top: -41px;
+}
+
+#Home {
+  position: relative;
+	margin-left: 33px;
+	margin-top: -47px;
+  height: 37px;
+  z-index: 15;
+  width: 47%;
+}
+#AnnualIncome {
+	position: relative;
+	height: 37px;
+	z-index: 10;
+	width: 56%;
+	margin-left: 15px;
+	}
+#PayFrequency {
+	position: relative;
+	height: 47px;
+	z-index: 13;
+	margin-left: 15px;
+	margin-top: 57px;
+	width: 57%;
+}
+#PayCheck {
+	position: relative;
+	height: 47px;
+	z-index: 17;
+	margin-left: 16px;
+	margin-top: 43px;
+	width: 56%;
+}
+#info-Submit {
+	position: relative;
+	height: 37px;
+	z-index: 15;
+	width: 85%;
+	margin-left: 70%;
+	margin-top: 64px;
+}
+.login{
+	width: 226%;
+	background:#e5e5e5 ;
+	font-size: 22px;
+	color:#66656a;
+	font-family: "Myriad Pro";
+	height: 40px;
+	border:1px solid #53acbc;
+}
+
+#login {
+	position: relative;
+	height: 59px;
+	z-index: 10;
+	margin-top: 90px;
+	margin-left: 48px;
+	width: 31%;
+}
+	
