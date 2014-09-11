@@ -95,7 +95,7 @@ font-face{
 
 }
 .email_form{
-	width: 95%;
+	width: 94%;
 	background: none repeat scroll 0% 0% #CCC;
 	height: 30px;
 	font-size: 16px;
@@ -106,9 +106,10 @@ font-face{
 	border: none;
 	border-top: 1px solid #797979;
 	border-radius: 3px;
+	padding-left:10px;
 }
 .password_form{
-	width: 95%;
+	width: 94%;
 	background: none repeat scroll 0% 0% #CCC ;
 	height: 40px;
 	color:#7f7f81;
@@ -118,6 +119,7 @@ font-face{
 	border: none;
 	border-top: 1px solid #797979;
 	border-radius: 3px;
+	padding-left:10px;
 	}
 .password{
 	color:#7f7f81;
@@ -138,7 +140,7 @@ font-face{
 #Signup {
     position: relative;
     height: 59px;
-    margin-top: 100px;
+    margin-top: 95px;
     margin-left: 12%;
     padding: 0px;
 
@@ -174,10 +176,11 @@ font-face{
 	font-family:"Myriad Pro";
 	font-size:14px;
 	margin-top: 6px;
-	width: 95%;
+	width: 94%;
 	border: none;
 	border-top: 1px solid #797979;
 	border-radius: 3px;
+	padding-left:10px;
 }
 .text{
 	color:#7f7f81;
@@ -185,7 +188,8 @@ font-face{
 	font-family:"Myriad Pro";
 }
 .form{
-	width: 95%;
+	width: 94%;
+	padding-left:10px;
 	color: #7f7f81;
 	background: none repeat scroll 0% 0% #CCC;
 	font-size: 14px;
@@ -239,7 +243,8 @@ font-face{
 	font-family: "Myriad Pro";
 }
 .detail{
-	width:95%;
+	width:94%;
+	padding-left:10px;
 	font-size:16px;
 	font-family:"Myriad Pro";
 	margin-top:1%;
