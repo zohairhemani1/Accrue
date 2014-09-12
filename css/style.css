@@ -28,7 +28,6 @@ font-stretch: inherit;
 -moz-font-feature-settings: inherit;
 -moz-font-language-override: inherit;
 vertical-align: baseline;
-font-size: 49px;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -384,5 +383,9 @@ font-face{
 	float:right;
 	margin-top:-27px;
 }
-#_800pm{
+.back{
+	margin-top: -32px;
+	margin-left: 7px;
 }
+.account{
+	margin-left: -55px;}
