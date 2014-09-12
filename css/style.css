@@ -306,12 +306,13 @@ font-face{
 	position: relative;
 	margin-left: 3%;
 	z-index: 23;
-	margin-top: -41px;
+	margin-top: -34px;
+	margin-bottom: -28px;
 }
 
 #Home {
     position: relative;
-	margin-left: 33px;
+	margin-left: 12%;
 	margin-top: -47px;
   	height: 37px;
   	z-index: 15;
