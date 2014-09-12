@@ -140,7 +140,7 @@ font-face{
 #Signup {
     position: relative;
     height: 59px;
-    margin-top: 95px;
+    margin-top: 85px;
     margin-left: 12%;
     padding: 0px;
 
@@ -149,20 +149,20 @@ font-face{
     position: relative;
     height: 37px;
     z-index: 11;
-    margin-left: 5%;
+    margin-left: 3%;
 }
 #Password {
     position: relative;
     height: 37px;
     z-index: 11;
     padding-top:  62px;
-    margin-left: 5%;
+    margin-left: 3%;
 }
 #confirm-password{
 	position: relative;
 	height: 37px;
 	z-index: 12;	
-	margin-left: 5%;
+	margin-left: 3%;
 	margin-top: 60px;
 }
 .confirm{
@@ -203,14 +203,14 @@ font-face{
 
 #Amount {
 	position: relative;
-	margin-left: 5%;
+	margin-left: 3%;
 	height: 37px;
 	z-index: 10;
 }
 
 #Description {
 	position: relative;
-	margin-left: 5%;
+	margin-left: 3%;
 	margin-top: 70px;
 	height: 47px;
 	z-index: 17;
@@ -256,7 +256,7 @@ font-face{
 }
 #Incomeaftertaxes{
   position: relative;
-  margin-left: 23px;
+  margin-left: 3%;
   margin-top: 11px;
   height: 91px;
   z-index: 7;
@@ -264,7 +264,7 @@ font-face{
 
 #TaxesWithheld{
   position: relative;
-  margin-left: 23px;
+  margin-left: 3%;
   margin-top: -50px;
   height: 87px;
   z-index: 8;
@@ -273,7 +273,7 @@ font-face{
 #Paybythesecond{
   position: relative;
   margin-top: -46px;
-  margin-left: 23px;
+  margin-left: 3%;
   height: 91px;
   z-index: 9;
 }
@@ -281,7 +281,7 @@ font-face{
 #Paybytheminute{
   position: relative;
   margin-top: -51px;
-  margin-left: 23px;
+  margin-left: 3%;
   height: 91px;
   z-index: 10;
 }
@@ -289,7 +289,7 @@ font-face{
 #HourlyPay{
   position: relative;
   margin-top: -50px;
-  margin-left: 23px;
+  margin-left: 3%;
   height: 91px;
   z-index: 11;
 }
@@ -297,14 +297,14 @@ font-face{
 #DailyPay{
   position: relative;
   margin-top: -49px;
-  margin-left: 23px;  
+  margin-left: 3%;  
   height: 91px;
   z-index: 12;
 }
 
 #Salary{
 	position: relative;
-	margin-left: 23px;
+	margin-left: 3%;
 	z-index: 23;
 	margin-top: -41px;
 }
@@ -320,28 +320,28 @@ font-face{
 	position: relative;
 	height: 37px;
 	z-index: 10;
-	margin-left: 5%;
+	margin-left: 3%;
 	}
 #PayFrequency {
 	position: relative;
 	height: 47px;
 	z-index: 13;
-	margin-left: 5%;
+	margin-left: -22%;
 	margin-top: 62px;
-}
+	padding-left: 333px;}
 #PayCheck {
 	position: relative;
 	height: 47px;
 	z-index: 17;
-	margin-left: 5%;
-	margin-top: 62px;
+	margin-left: 3%;
+	margin-top: 50px;
 }
 #info-Submit {
 	position: relative;
 	height: 37px;
 	z-index: 15;
 	margin-left: 12%;
-	margin-top: 90px;
+	margin-top: 70px;
 }
 .login{
 	width: 88%;
@@ -361,4 +361,27 @@ font-face{
 	margin-left: 12%;
 
 }
-	
+.freq{
+	width:94.5%;
+}
+.expenditure{	
+	background: #e5e5e5;
+	padding: 15px;
+	border-radius: 50%;
+	border:1px solid #53acbc;
+
+}
+.gear{
+	margin-top:-27px;
+	margin-left:15px;
+}
+.circle{
+	margin-bottom: 129px;
+	margin-left: 58px;
+}
+.info{
+	float:right;
+	margin-top:-27px;
+}
+#_800pm{
+}
