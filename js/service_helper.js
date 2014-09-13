@@ -6,7 +6,7 @@ this.httpRequest = function (request_url, type, formID, dataType , succesCallBac
 		alert(postData);
 		
 		$.ajax({
-    			url: "http://fajjemobile.info/addup/register.php",
+    			url: request_url,
     			type: type,
 				async:bool,
 				data: postData,

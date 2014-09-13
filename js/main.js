@@ -18,6 +18,8 @@ function login()
 function register()
 {
 	
+	alert('Register');
+	
 	var email = $('#email').val();	
 	var pass = $('#password').val();
 	var verifyPass = $('#verifyPassword').val();

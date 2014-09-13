@@ -1,5 +1,5 @@
 var APP_CONSTANTS = {
-    BASE_URL: "http://fajjemobile.info/addup/",
+    BASE_URL: "http://fajjemobile.info/accrue/",
 	REGISTER: "register.php"
 }
 
