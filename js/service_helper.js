@@ -34,7 +34,8 @@ this.httpRequest = function (request_url, type, formID, dataType , succesCallBac
 	}
 	
 	this.loginUser = function(type,formID,successCallBack, failedCallBack){
-		var url = APP_CONSTANTS.BASE_URL + APP_CONSTANTS.LOGIN;
+		var url = APP_CONSTANTS.BASE_URL + APP_CONSTANTS.LOGIN + APP_CONSTANTS.USER_ID_URL;
+		alert(url);
 		this.httpRequest(url, type, formID, null, successCallBack, failedCallBack, true);
 	}
 	this.infoUser = function(type,formID,successCallBack, failedCallBack){
