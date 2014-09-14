@@ -26,8 +26,6 @@ function login()
 		{
 			successMsg = response.success;
 			alert(successMsg);
-			var user_id = response.email_id;
-			localStorage.setItem("user_id", user_id);
 		}
 		else {
 			successMsg = response.error;
@@ -65,6 +63,9 @@ function register()
 		{
 			successMsg = response.success;
 			alert(successMsg);
+			var user_id = response.email_id;
+			localStorage.setItem("user_id", user_id);
+			window.location.href = "info.html";
 		}
 		else {
 			successMsg = response.error;
@@ -105,8 +106,8 @@ function info()
 			successMsg = response.success;
 			alert(successMsg);
 			//calculate(annualIncome,payFrequency,payCheck);
-			
-			window.location.href = "gear.html?income="+annualIncome+"&freq="+payFrequency+"&pay="+payCheck;
+			window.location.href="main.html";
+			//window.location.href = "gear.html?income="+annualIncome+"&freq="+payFrequency+"&pay="+payCheck;
 		}
 		else {
 			successMsg = response.error;
@@ -157,6 +158,50 @@ function expenditure()
 	
 	
 }
+
+
+
+function getInfo()
+{
+	var success = function(response) 
+	{
+		response = JSON.parse(response);
+		console.log(JSON.stringify(response));
+		var annualIncome = response[0].annualIncome;
+		var payFrequency = response[0].payFrequency;
+		var payCheck = response[0].payCheck;
+		
+		var cal_values = calculate(annualIncome,payFrequency,payCheck);
+		
+		if(annualIncome%1 == 0){
+			annualIncome = parseInt(annualIncome).toFixed(2);
+		}
+		if(cal_values.daily%1 == 0){
+			cal_values.daily = parseInt(cal_values.daily).toFixed(4);
+		}
+		
+		$("#salary_span").text(CommaFormatted(annualIncome));
+		$("#taxHome_span").text(CommaFormatted(cal_values.takeHome.toFixed(2)));
+		$("#tax_span").text(((cal_values.tax)*100).toFixed(4));
+		$("#second_span").text(CommaFormatted(cal_values.second.toFixed(4)));
+		$("#minute_span").text(CommaFormatted(cal_values.minute.toFixed(4)));
+		$("#hourly_span").text(CommaFormatted(cal_values.hourly.toFixed(4)));
+		$("#daily_span").text(CommaFormatted(cal_values.daily));
+
+		
+    } 
+	
+	var failed = function(response) {
+		alert('failed');
+		console.log(JSON.stringify(response));
+	}
+	
+	var jsonHelper = new ServiceHelper();
+	jsonHelper.getInfo(JSON_CONSTANTS.get, success, failed);
+
+}
+
+
 
 
 function getUrlVars()

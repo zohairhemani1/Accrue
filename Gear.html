@@ -49,30 +49,7 @@
 <script src="js/main.js"></script>
 
 <script>
-	
-	var annualIncome = getUrlVars()["income"];
-	var payFrequency = getUrlVars()["freq"];
-	var payCheck = getUrlVars()["pay"];
-	var cal_values = calculate(annualIncome,payFrequency,payCheck);
-	
-	if(annualIncome%1 == 0){
-		annualIncome = parseInt(annualIncome).toFixed(2);
-	}
-	if(cal_values.daily%1 == 0){
-		cal_values.daily = parseInt(cal_values.daily).toFixed(4);
-	}
-	
-	
-
-	$("#salary_span").text(CommaFormatted(annualIncome));
-	$("#taxHome_span").text(CommaFormatted(cal_values.takeHome.toFixed(2)));
-	$("#tax_span").text(((cal_values.tax)*100).toFixed(4));
-	$("#second_span").text(CommaFormatted(cal_values.second.toFixed(4)));
-	$("#minute_span").text(CommaFormatted(cal_values.minute.toFixed(4)));
-	$("#hourly_span").text(CommaFormatted(cal_values.hourly.toFixed(4)));
-	$("#daily_span").text(CommaFormatted(cal_values.daily));
-	
-	
+	getInfo();
 </script>
 
 </body>

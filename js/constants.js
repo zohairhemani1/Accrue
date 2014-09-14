@@ -3,8 +3,10 @@ var APP_CONSTANTS = {
 	REGISTER: "register.php",
 	LOGIN: "login.php",
 	INFO: "info.php",
+	GET_INFO: "getInfo.php",
 	EXPENDITURE: "expenditure.php",
-	USER_ID_URL: "?user_id=" + localStorage.getItem("user_id")
+	USER_ID_URL: "?user_id=" + localStorage.getItem("user_id"),
+	GEAR:"gear.html"
 }
 
 var JSON_CONSTANTS = {
