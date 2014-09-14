@@ -11,7 +11,7 @@
 </head>
 <body>
 <div id="nav">
-<span class="name"><center><img src="images/Accrue.png" width="90" height="23"  class="imj"/></center></span><a href="Main.html"><img src="images/back.png" height="40" class="back" /></a>
+<span class="name"><center><img src="images/Accrue.png" width="90" height="23"  class="imj"/></center></span><a href="info.html"><img src="images/back.png" height="40" class="back" /></a>
 </div>
 <div id="Salary">
   <div id="Salary2">
@@ -27,19 +27,33 @@
 <p class="text">Taxes withheld:<br />24.22%</p>
 </div>
 <div id="Paybythesecond">
-<p class="text">Pay by the second:<br />$0.0022</p>
+<p class="text">Pay by the second:<br />$<span id="second_span"></span></p>
 </div>
 <div id="Paybytheminute">
-<p class="text">Pay by the minute:<br />$0.06</p>
+<p class="text">Pay by the minute:<br />$<span id="minute_span"></span></p>
 </div>
 <div id="HourlyPay">
-<p class="text">Hourly Pay:<br />$3.89</p>
+<p class="text">Hourly Pay:<br />$<span id="hourly_span"></span></p>
 </div>
 <div id="DailyPay">
-<p class="text">Daily Pay:<br />$93.43</p>
+<p class="text">Daily Pay:<br />$<span id="daily_span"></span></p>
 </div>
 <div id="Home">
-<input type="submit" value="Home" class="submit" />
+<input type="button" value="Home" class="submit" />
 </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/service_helper.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/calculation.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+	
+	alert('sec: ' + CALCULATED_VALUES.second);
+
+	$("#second_span").val(CALCULATED_VALUES.second);
+</script>
+
 </body>
 </html>

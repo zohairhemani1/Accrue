@@ -104,6 +104,9 @@ function info()
 		{
 			successMsg = response.success;
 			alert(successMsg);
+			calculate(annualIncome,payFrequency,payCheck);
+			
+			//window.location.href = "gear.html";
 		}
 		else {
 			successMsg = response.error;
