@@ -16,21 +16,21 @@
   </center>
   </span><a href="Main.html"><img src="images/back.png" height="40" class="back" /></a> </div>
 <div id="Email">
-<form>
+<form id="registerForm">
   <span class="email">Email<br />
-  <input type="email" name="eml" id="email" class="email_form" required="required">
+  <input type="email" name="email" id="email" class="email_form" required="required">
   <br />
   </span>
   </div>
   <div id="Password"> <span class="password">Password<br />
-    <input type="password" name="pwd"  id="password" formnovalidate="formnovalidate" class="password_form" required="required" />
+    <input type="password" name="password"  id="password" formnovalidate="formnovalidate" class="password_form" required="required" />
     <br />
     </span> </div>
   <div id="confirm-password"> <span class="confirm">Confirm Password<br />
     <input type="password"  id="verifyPassword" required="required" class="confirm_form" />
     </span> </div>
   <div id="Signup">
-  <input type="submit"  value="Signup" class="signup" id="register" />
+  <input type="button"  value="Signup" class="signup" id="register" />
   <div class="account">
   <center>
     <p>Not registerd?<a href="login.html"><u>Click here</u></a></p>
@@ -38,5 +38,11 @@
 </form>
 </div>
 </div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/service_helper.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
