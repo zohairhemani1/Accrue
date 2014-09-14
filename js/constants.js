@@ -1,6 +1,7 @@
 var APP_CONSTANTS = {
     BASE_URL: "http://fajjemobile.info/accrue/",
-	REGISTER: "register.php"
+	REGISTER: "register.php",
+	LOGIN: "login.php"
 }
 
 var JSON_CONSTANTS = {
