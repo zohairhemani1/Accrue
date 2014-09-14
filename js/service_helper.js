@@ -41,5 +41,10 @@ this.httpRequest = function (request_url, type, formID, dataType , succesCallBac
 		var url = APP_CONSTANTS.BASE_URL + APP_CONSTANTS.INFO;
 		this.httpRequest(url, type, formID, null, successCallBack, failedCallBack, true);
 	}
+	this.expenditure = function(type,formID,successCallBack, failedCallBack){
+		var url = APP_CONSTANTS.BASE_URL + APP_CONSTANTS.EXPENDITURE;
+		this.httpRequest(url, type, formID, null, successCallBack, failedCallBack, true);
+	}
+	
 	
 }

@@ -9,6 +9,8 @@ function bindElements() {
 	$(document).on("click", "#login_button", login);
 	$(document).on("click", "#register", register);
 	$(document).on("click", "#info_button", info);
+	$(document).on("click", "#expenditureButton", expenditure);
+	
 }
 
 function login()
@@ -24,6 +26,8 @@ function login()
 		{
 			successMsg = response.success;
 			alert(successMsg);
+			var user_id = response.email_id;
+			localStorage.setItem("user_id", user_id);
 		}
 		else {
 			successMsg = response.error;
@@ -114,5 +118,39 @@ function info()
 	
 	var jsonHelper = new ServiceHelper();
 	jsonHelper.infoUser(JSON_CONSTANTS.POST, '#infoForm' , success, failed);
+	
+}
+
+function expenditure()
+{
+	
+	var amount = $('#input_amount').val();	
+	var description = $('#input_description').val();
+	
+	var success = function(response) 
+	{
+		response = JSON.parse(response);
+		var successMsg;
+		console.log(JSON.stringify(response));
+		$("#loading").css("display","none");
+		if(response.success != null) 
+		{
+			successMsg = response.success;
+			alert(successMsg);
+		}
+		else {
+			successMsg = response.error;
+			alert(successMsg);
+		}
+    } 
+	
+	var failed = function(response) {
+		alert('failed');
+		console.log(JSON.stringify(response));
+	}
+	
+	var jsonHelper = new ServiceHelper();
+	jsonHelper.expenditure(JSON_CONSTANTS.POST, '#expenditureForm' , success, failed);
+	
 	
 }

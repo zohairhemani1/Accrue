@@ -16,6 +16,9 @@ include 'headers/connect_database.php';
 	 
 	 if($count == 1)
 	 {
+		  $row = mysqli_fetch_array($result);
+		  $email_id = $row['id'];
+		  $returnArray['email_id'] = $email_id;
 		  $returnArray['success'] = "Login Successfully";
 	 }
 	 else

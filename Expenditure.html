@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,25 +10,32 @@
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div id="nav">
-<span class="name"><center><img src="images/Accrue.png" width="90" height="23"  class="imj"/></center>
-</span><a href="Main.html"><img src="images/back.png" height="40" class="back" /></a>
-</div>
+<div id="nav"> <span class="name">
+  <center>
+    <img src="images/Accrue.png" width="90" height="23"  class="imj"/>
+  </center>
+  </span><a href="Main.html"><img src="images/back.png" height="40" class="back" /></a> </div>
 <div id="Amount">
-<form>
-<span class="text">Amount<br /><input type="text" value="$42.42" / class="form" required="required" required="required"><br />
-</span>
-</div>
-<div id="Description">
-<span class="text">Description<br />
-<textarea name="textarea"
-name="description" cols="50" rows="5" required="required" class="detail"> Lunch at Fresh and easy</textarea>
-<br />
-</span>
-</div>
-<div id="Submit">
-<input type="submit" value="Submit" class="button" /> 
-</div>
+<form id="expenditureForm">
+  <span class="text">Amount<br />
+  <input type="text" value="" name="amount" id="input_amount" class="form" required="required">
+  <br />
+  </span>
+  </div>
+  <div id="Description"> <span class="text">Description<br />
+    <textarea
+ cols="50" rows="5" name="description" id="input_description" required="required" class="detail"></textarea>
+    <br />
+    </span> </div>
+  <div id="Submit">
+    <input type="button" value="Submit" class="button" id="expenditureButton" />
+  </div>
 </form>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/service_helper.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
