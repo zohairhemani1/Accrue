@@ -13,22 +13,29 @@
 <div id="nav"><span class="name"><center><img src="images/Accrue.png" width="90" height="23"  class="imj"/></center></span><a href="Main.html"><img src="images/back.png" height="40" class="back" /></a>
 </div>
 <div id="Email">
-  <form>
-<span class="email">Email<br /> <input type="email" name="eml" / class="email_form" required="required"><br />
+  <form id="loginForm">
+<span class="email">Email<br /> <input type="email" name="email" id="input_email" class="email_form" required="required"><br />
 </span>
 </div>
 <div id="Password">
 
-<span class="password">Password<br /> <input type="password" name="pwd" formnovalidate="formnovalidate" class="password_form" required="required" /><br />
+<span class="password">Password<br /> <input type="password" name="password" formnovalidate="formnovalidate" class="password_form" id="input_password" required="required" /><br />
 </span>
 </div>
 <div id="login">
-<input type="submit"  value="Login" class="login">
-<div class="account"><center><p>Already registerd?<a href="signup.html"><u>Click here</u></a</p></center>
+<input type="button" id="login_button" value="Login" class="login">
+<div class="account"><center><p>Already registerd?<a href="signup.html"><u>Click here</u></a></p></center>
 </div>
 
 </form>
 </div>
 </div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/service_helper.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
