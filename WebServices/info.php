@@ -9,10 +9,10 @@ include 'headers/connect_database.php';
 	 $annualIncome = $_POST['annualIncome'];
 	 $payFrequency = $_POST['payFrequency'];
 	 $payCheck = $_POST['payCheck'];
-	 $email = "zohairhemani1@gmail.com";
+	 $user_id = $_GET['user_id'];
 	 
 	 
-	 $query ="INSERT INTO info(email,annualIncome,payFrequency,payCheck)VALUES('$email','$annualIncome','$payFrequency','$payCheck')";
+	 $query ="INSERT INTO info(email_id,annualIncome,payFrequency,payCheck)VALUES('$user_id','$annualIncome','$payFrequency','$payCheck')";
 	 $result = mysqli_query($con,$query) or die ("Couldn’t execute query.");
 	 $returnArray['success'] = "Info Recorded";
 	
