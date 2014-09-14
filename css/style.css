@@ -326,9 +326,9 @@ font-face{
 	position: relative;
 	height: 47px;
 	z-index: 13;
-	margin-left: -22%;
+	/*  margin-left: -22%; */
 	margin-top: 62px;
-	padding-left: 333px;}
+	padding-left: 48px;}
 #PayCheck {
 	position: relative;
 	height: 47px;

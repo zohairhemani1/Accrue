@@ -8,6 +8,7 @@ $(document).ready(function(e) {
 function bindElements() {
 	$(document).on("click", "#login_button", login);
 	$(document).on("click", "#register", register);
+	$(document).on("click", "#info_button", info);
 }
 
 function login()
@@ -49,8 +50,6 @@ function register()
 	var pass = $('#password').val();
 	var verifyPass = $('#verifyPassword').val();
 	
-	
-	
 	var success = function(response) 
 	{
 		response = JSON.parse(response);
@@ -81,8 +80,36 @@ function register()
 		alert('Password Doesnot Match!');
 	}
 	
-		
+}
+
+function info()
+{
+	var annualIncome = $('#income').val();	
+	var payFrequency = $('#frequency').val();
+	var payCheck = $('#pay_check').val();
 	
+	var success = function(response) 
+	{
+		response = JSON.parse(response);
+		var successMsg;
+		console.log(JSON.stringify(response));
+		if(response.success != null) 
+		{
+			successMsg = response.success;
+			alert(successMsg);
+		}
+		else {
+			successMsg = response.error;
+			alert(successMsg);
+		}
+    } 
 	
+	var failed = function(response) {
+		alert('failed');
+		console.log(JSON.stringify(response));
+	}
+	
+	var jsonHelper = new ServiceHelper();
+	jsonHelper.infoUser(JSON_CONSTANTS.POST, '#infoForm' , success, failed);
 	
 }

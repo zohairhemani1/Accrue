@@ -15,13 +15,14 @@
 <span class="name"><center><img src="images/Accrue.png" width="90" height="23"  class="imj"/></center></span><a href="Main.html"><img src="images/back.png" height="40" class="back" /></a>
 </div>
 <div id="AnnualIncome">
-<form>
-<span class="text">Annual Income<br /><input type="text" value="" / class="form" required="required" required="required"><br />
+<form id="infoForm">
+<span class="text">Annual Income<br />
+<input type="text" class="form" id="income" name="annualIncome" required="required" /><br />
 </span>
 </div>
 <div id="PayFrequency">
 <span class="text">Pay Frequency<br  />
-<select name="day" class="form freq">
+<select name="payFrequency" class="form freq" id="frequency">
 <option value="By-Month">By-Month</option>
 <option value="By-Year" selected>By-Year</option>
 <option value="Bi-Weekly">Bi-Weekly</option>
@@ -30,12 +31,19 @@
 </span>
 </div>
 <div id="PayCheck">
-<span class="text">Pay Check<br /><input type="text" value="" class="form"  required="required" /><br />
+<span class="text">Pay Check<br />
+<input type="text" value="" class="form" name="payCheck" id="pay_check" required="required" /><br />
 </span>
 </div>
 <div id="info-Submit">
-<input type="submit" value="Submit" class="button" /> 
+<input type="button" value="Submit" class="button" id="info_button" /> 
 </div>
 </form>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/service_helper.js"></script>
+<script src="js/constants.js"></script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
