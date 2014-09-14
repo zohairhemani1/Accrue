@@ -16,15 +16,15 @@
 <div id="Salary">
   <div id="Salary2">
     <p class="text">Salary:<br />
-      $34,101.43</p>
+      $<span id="salary_span"></span></p>
   </div>
   <p class="text">&nbsp;</p>
 </div>
 <div id="Incomeaftertaxes">
-<p class="text">Income after taxes:<br />34,101.43</p>
+<p class="text">Income after taxes:<br />$<span id="taxHome_span"></span></p>
 </div> 
 <div id="TaxesWithheld">
-<p class="text">Taxes withheld:<br />24.22%</p>
+<p class="text">Taxes withheld:<br /><span id="tax_span"></span>%</p>
 </div>
 <div id="Paybythesecond">
 <p class="text">Pay by the second:<br />$<span id="second_span"></span></p>
@@ -50,9 +50,21 @@
 
 <script>
 	
-	alert('sec: ' + CALCULATED_VALUES.second);
+	var annualIncome = getUrlVars()["income"];
+	var payFrequency = getUrlVars()["freq"];
+	var payCheck = getUrlVars()["pay"];
+	
+	var cal_values = calculate(annualIncome,payFrequency,payCheck);
 
-	$("#second_span").val(CALCULATED_VALUES.second);
+	$("#salary_span").text(annualIncome);
+	$("#taxHome_span").text(cal_values.takeHome.toFixed(4));
+	$("#tax_span").text(((cal_values.tax)*100).toFixed(4));
+	$("#second_span").text(cal_values.second.toFixed(4));
+	$("#minute_span").text(cal_values.minute.toFixed(4));
+	$("#hourly_span").text(cal_values.hourly.toFixed(4));
+	$("#daily_span").text(cal_values.daily);
+	
+	
 </script>
 
 </body>

@@ -104,9 +104,9 @@ function info()
 		{
 			successMsg = response.success;
 			alert(successMsg);
-			calculate(annualIncome,payFrequency,payCheck);
+			//calculate(annualIncome,payFrequency,payCheck);
 			
-			//window.location.href = "gear.html";
+			window.location.href = "gear.html?income="+annualIncome+"&freq="+payFrequency+"&pay="+payCheck;
 		}
 		else {
 			successMsg = response.error;
@@ -156,4 +156,18 @@ function expenditure()
 	jsonHelper.expenditure(JSON_CONSTANTS.POST, '#expenditureForm' , success, failed);
 	
 	
+}
+
+
+function getUrlVars()
+{
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
 }

@@ -3,12 +3,16 @@
 var annualIncome;
 var payFreq;
 var payCheck;
+var totalDays = 365;
 
 
 var CALCULATED_VALUES = {
-	hourly:"",
-	minute:"",
-	second:""
+	hourly:	"",
+	minute:	"",
+	second:	"",
+	daily:"",
+	takeHome:"",
+	tax:""
 };
 
 function calculate(annualIncome,payFreq,payCheck)
@@ -40,12 +44,12 @@ function calculate(annualIncome,payFreq,payCheck)
 		}
 	
 		
+		this.CALCULATED_VALUES.daily = dailyPay;
 		this.CALCULATED_VALUES.hourly = dailyPay / 24;
 		this.CALCULATED_VALUES.minute = CALCULATED_VALUES.hourly / 60;
 		this.CALCULATED_VALUES.second = CALCULATED_VALUES.minute / 60;
-		
-		//alert('Hourly: ' + myObj.hourly);
-		//alert('Minute: ' + myObj.minute);
-		//alert('Second: ' + myObj.second);
+		this.CALCULATED_VALUES.takeHome = dailyPay*totalDays;
+		this.CALCULATED_VALUES.tax = 1 - (this.CALCULATED_VALUES.takeHome / annualIncome);
+		return CALCULATED_VALUES;
 		
 }
