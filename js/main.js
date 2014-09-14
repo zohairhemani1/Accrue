@@ -105,9 +105,7 @@ function info()
 		{
 			successMsg = response.success;
 			alert(successMsg);
-			//calculate(annualIncome,payFrequency,payCheck);
 			window.location.href="main.html";
-			//window.location.href = "gear.html?income="+annualIncome+"&freq="+payFrequency+"&pay="+payCheck;
 		}
 		else {
 			successMsg = response.error;
@@ -197,7 +195,7 @@ function getInfo()
 	}
 	
 	var jsonHelper = new ServiceHelper();
-	jsonHelper.getInfo(JSON_CONSTANTS.get, success, failed);
+	jsonHelper.getInfo(JSON_CONSTANTS.GET, success, failed);
 
 }
 
