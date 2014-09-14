@@ -19,6 +19,7 @@ function login()
 		response = JSON.parse(response);
 		var successMsg;
 		console.log(JSON.stringify(response));
+		$("#loading").css("display","none");
 		if(response.success != null) 
 		{
 			successMsg = response.success;
@@ -55,6 +56,7 @@ function register()
 		response = JSON.parse(response);
 		var successMsg;
 		console.log(JSON.stringify(response));
+		$("#loading").css("display","none");
 		if(response.success != null) 
 		{
 			successMsg = response.success;
@@ -93,6 +95,7 @@ function info()
 		response = JSON.parse(response);
 		var successMsg;
 		console.log(JSON.stringify(response));
+		$("#loading").css("display","none");
 		if(response.success != null) 
 		{
 			successMsg = response.success;

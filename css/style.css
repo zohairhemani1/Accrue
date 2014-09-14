@@ -139,7 +139,7 @@ font-face{
 #Signup {
     position: relative;
     height: 59px;
-    margin-top: 85px;
+    margin-top: 50px;
     margin-left: 12%;
     padding: 0px;
 
@@ -389,3 +389,15 @@ font-face{
 }
 .account{
 	margin-left: -55px;}
+	
+#loading {
+	width: 100px;
+	height: 35px;
+	background-image: url(../images/loader.gif);
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+	display:none;
+}

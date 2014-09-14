@@ -3,7 +3,8 @@ function ServiceHelper() {
 this.httpRequest = function (request_url, type, formID, dataType , succesCallBack, errorCallBack, bool) {
     	
 		var postData = $(formID).serializeArray();
-		alert(postData);
+		//alert(postData);
+		$("#loading").css("display","block");
 		
 		$.ajax({
     			url: request_url,
