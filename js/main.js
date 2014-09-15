@@ -10,6 +10,7 @@ function bindElements() {
 	$(document).on("click", "#register", register);
 	$(document).on("click", "#info_button", info);
 	$(document).on("click", "#expenditureButton", expenditure);
+	$(document).on("click", "#gear_home_button", gear_home_button);
 	
 }
 
@@ -199,6 +200,10 @@ function getInfo()
 
 }
 
+function gear_home_button()
+{
+	window.location.href="main.html";
+}
 
 
 
