@@ -212,7 +212,8 @@ function getTotalExpenditure()
 		response = JSON.parse(response);
 		var successMsg;
 		console.log(JSON.stringify(response));
-		
+		$('#totalExpenditure').text(response.totalExpenditure);
+		$('#expenditureCount').text(response.expenditureCount);
     } 
 	
 	var failed = function(response) {

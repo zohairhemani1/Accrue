@@ -15,5 +15,12 @@ include 'headers/connect_database.php';
 	 
 	 $returnArray['totalExpenditure'] = $totalExpenditure;
 	 
+	 $query = "SELECT * FROM `expenditure` WHERE email_id = '$user_id'";
+	 $result = mysqli_query($con,$query);
+	 $count = mysqli_num_rows($result);
+	 
+	 $returnArray['expenditureCount'] = $count;
+	 
+	 
 	 echo json_encode($returnArray);
 ?>
