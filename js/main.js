@@ -205,6 +205,27 @@ function gear_home_button()
 	window.location.href="main.html";
 }
 
+function getTotalExpenditure()
+{	
+	var success = function(response) 
+	{
+		response = JSON.parse(response);
+		var successMsg;
+		console.log(JSON.stringify(response));
+		
+    } 
+	
+	var failed = function(response) {
+		alert('failed');
+		console.log(JSON.stringify(response));
+	}
+	
+	var jsonHelper = new ServiceHelper();
+	jsonHelper.totalExpenditure(JSON_CONSTANTS.GET, success, failed);
+	
+	
+}
+
 
 
 function getUrlVars()

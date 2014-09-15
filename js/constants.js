@@ -6,7 +6,8 @@ var APP_CONSTANTS = {
 	GET_INFO: "getInfo.php",
 	EXPENDITURE: "expenditure.php",
 	USER_ID_URL: "?user_id=" + localStorage.getItem("user_id"),
-	GEAR:"gear.html"
+	GEAR:"gear.html",
+	TOTAL_EXPENDITURE:"getTotal.php"
 }
 
 var JSON_CONSTANTS = {
