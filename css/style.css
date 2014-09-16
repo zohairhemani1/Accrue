@@ -65,7 +65,7 @@ a:hover { text-decoration:underline; }
 }
 #nav{
     position: relative;
-    height: 45px;
+    height: 48px;
     z-index: 4;
     background: none repeat scroll 0% 0% #666;
 	width: 100%;
@@ -83,7 +83,7 @@ a:hover { text-decoration:underline; }
  	margin-left: 35%;
 }
 .imj{
-	margin-top:6px;
+	margin-top:11px;
 	margin-left:auto;
 	margin-right:auto;
 	color:#FFF;
@@ -93,6 +93,7 @@ a:hover { text-decoration:underline; }
 	color:#7f7f81;
 	font-family: "Myriad Pro";
 	margin-bottom: 14px;
+	font-weight:bold;
 
 }
 .email_form{
@@ -171,6 +172,7 @@ a:hover { text-decoration:underline; }
 	font-size: 18px;
 	color:#7f7f81;
 	font-family:"Myriad Pro";
+	font-weight:bold;
 }
 .confirm_form{
 	background:#CCC;
@@ -188,6 +190,7 @@ a:hover { text-decoration:underline; }
 	color:#7f7f81;
 	font-size:18px;
 	font-family:"Myriad Pro";
+	font-weight:bold;
 }
 .form{
 	width: 94%;
@@ -368,7 +371,7 @@ a:hover { text-decoration:underline; }
 
 }
 .freq{
-	width:94.7%;
+	width:97.7%;
 }
 .expenditure{	
 	background: #e5e5e5;
