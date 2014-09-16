@@ -100,7 +100,7 @@ a:hover { text-decoration:underline; }
 	background: none repeat scroll 0% 0% #CCC;
 	height: 30px;
 	font-size: 16px;
-	color:#66656a;
+	color:#fff;
 	font-family: "Myriad Pro";
 	margin-top: 6px;
 	height: 40px;
@@ -191,7 +191,7 @@ a:hover { text-decoration:underline; }
 .form{
 	width: 94%;
 	padding-left:10px;
-	color: #7f7f81;
+	color: #fff;
 	background: none repeat scroll 0% 0% #CCC;
 	font-size: 14px;
 	border: none;
@@ -250,7 +250,7 @@ a:hover { text-decoration:underline; }
 	font-family:"Myriad Pro";
 	margin-top:1%;
 	background:#ccc;
-	color:#7f7f81;
+	color:#fff;
 	border: none;
 	border-top: 1px solid #797979;
 	border-radius: 3px;
@@ -327,10 +327,10 @@ a:hover { text-decoration:underline; }
 #PayFrequency {
 	position: relative;
 	height: 47px;
-	z-index: 13;
-	/*  margin-left: -22%; */
+	z-index: 10;
 	margin-top: 62px;
-	padding-left: 48px;}
+	margin-left: 3%;
+}
 #PayCheck {
 	position: relative;
 	height: 47px;
@@ -364,7 +364,7 @@ a:hover { text-decoration:underline; }
 
 }
 .freq{
-	width:94.5%;
+	width:97.7%;
 }
 .expenditure{	
 	background: #e5e5e5;
