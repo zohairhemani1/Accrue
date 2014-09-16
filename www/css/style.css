@@ -65,7 +65,7 @@ a:hover { text-decoration:underline; }
 }
 #nav{
     position: relative;
-    height: 48px;
+    height: 53px;
     z-index: 4;
     background: none repeat scroll 0% 0% #666;
 	width: 100%;
@@ -97,7 +97,7 @@ a:hover { text-decoration:underline; }
 
 }
 .email_form{
-	width: 94%;
+	width: 93%;
 	background: none repeat scroll 0% 0% #CCC;
 	height: 30px;
 	font-size: 18px;
@@ -111,7 +111,7 @@ a:hover { text-decoration:underline; }
 	padding-left:10px;
 }
 .password_form{
-	width: 94%;
+	width: 93%;
 	background: none repeat scroll 0% 0% #CCC ;
 	height: 48px;
 	color:black;
@@ -127,6 +127,7 @@ a:hover { text-decoration:underline; }
 	color:#7f7f81;
 	font-size:18px;
 	font-family:"Myriad Pro";
+	font-weight:bold;
 }
 .signup{
 	color:#66656a;
@@ -180,7 +181,7 @@ a:hover { text-decoration:underline; }
 	font-family:"Myriad Pro";
 	font-size:18px;
 	margin-top: 6px;
-	width: 94%;
+	width: 93%;
 	border: none;
 	border-top: 1px solid #797979;
 	border-radius: 3px;
@@ -193,7 +194,7 @@ a:hover { text-decoration:underline; }
 	font-weight:bold;
 }
 .form{
-	width: 94%;
+	width: 93%;
 	padding-left:10px;
 	color: #fff;
 	background: none repeat scroll 0% 0% #CCC;
@@ -250,7 +251,7 @@ a:hover { text-decoration:underline; }
 	border-radius:2px;
 }
 .detail{
-	width:94%;
+	width:93%;
 	padding-left:10px;
 	font-size:16px;
 	font-family:"Myriad Pro";
