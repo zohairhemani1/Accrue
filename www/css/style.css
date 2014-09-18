@@ -230,7 +230,7 @@ a:hover { text-decoration:underline; }
 #Submit {
 	position: relative;
 	margin-left: 12%;
-	margin-top: 160px;
+	margin-top: 95px;
 	height: 59px;
 	z-index: 15;
 }
