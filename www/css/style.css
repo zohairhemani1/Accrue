@@ -37,6 +37,8 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background:url(../images/background.png);
+
 }
 ol, ul {
 	list-style: none;
@@ -74,6 +76,8 @@ a:hover { text-decoration:underline; }
 	padding-right: 16px;
 	margin-top: -8px;
 	border-bottom:2px solid #53acbc;
+	background:url(../images/nav.png);
+	background-repeat:repeat-x;
 }
 .name{
  	text-align: center;
@@ -136,7 +140,8 @@ a:hover { text-decoration:underline; }
 	border:1px solid #53acbc;
 	width:83%;
 	text-align:center;
-	height:37px;
+	height:31px;
+	padding-top:7px;
 	font-size:22px;
 	font-family:"Myriad Pro";
 }
@@ -268,6 +273,7 @@ a:hover { text-decoration:underline; }
   margin-top: 11px;
   height: 91px;
   z-index: 7;
+  margin-bottom:-57px;
 }
 
 #TaxesWithheld{
@@ -276,6 +282,7 @@ a:hover { text-decoration:underline; }
   margin-top: -50px;
   height: 87px;
   z-index: 8;
+  margin-bottom:-57px;
 }
 
 #Paybythesecond{
@@ -284,6 +291,7 @@ a:hover { text-decoration:underline; }
   margin-left: 3%;
   height: 91px;
   z-index: 9;
+  margin-bottom:-60px;
 }
 
 #Paybytheminute{
@@ -292,6 +300,7 @@ a:hover { text-decoration:underline; }
   margin-left: 3%;
   height: 91px;
   z-index: 10;
+  margin-bottom:-63px;
 }
 
 #HourlyPay{
@@ -300,6 +309,7 @@ a:hover { text-decoration:underline; }
   margin-left: 3%;
   height: 91px;
   z-index: 11;
+  margin-bottom:-66px;
 }
 
 #DailyPay{
@@ -315,7 +325,7 @@ a:hover { text-decoration:underline; }
 	margin-left: 3%;
 	z-index: 23;
 	margin-top: -34px;
-	margin-bottom: -28px;
+	margin-bottom: -41px;
 }
 
 #Home {
@@ -408,6 +418,7 @@ a:hover { text-decoration:underline; }
 	background-position: center;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 60px;
+	margin-top: 49px;
+	margin-bottom: -69px;
 	display:none;
 }
