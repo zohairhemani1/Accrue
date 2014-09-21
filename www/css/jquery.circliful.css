@@ -23,9 +23,21 @@
 #cents
 {
 	font-size:26px;
+	font-family:Myriad Pro;
+}
+#dollars
+{
+	font-family:Myriad Pro;
+
 }
 
 [data-fill]
 {
 	background-color:#FFF !important;
+}
+[data-info]
+{
+	font-family:Myriad Pro;
+	margin-left:10px;
+	font-size:18px;
 }
