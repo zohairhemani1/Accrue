@@ -18,7 +18,7 @@
             iconcolor: '#999',
             border: 'default',
             complete: null,
-            bordersize: 10
+            bordersize: 30
         }, options);
 
         return this.each(function () {
