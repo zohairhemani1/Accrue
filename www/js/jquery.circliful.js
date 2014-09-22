@@ -236,11 +236,12 @@
 
 
 
-if(i==bpercent){
-	fixedPer=((circ) * current) - quart + additionalAngelPI;
-	}
+			if(i==bpercent){
+				fixedPer=((circ) * current) - quart + additionalAngelPI;
+				}
 
-if(i<bpercent){
+			if(i<bpercent)
+			{
                 context.beginPath();
              	
 				     context.arc(x, y, radius, -(quart) + additionalAngelPI, ((circ) * current) - quart + additionalAngelPI, false);
@@ -257,9 +258,9 @@ if(i<bpercent){
                 context.strokeStyle = customSettingsObj.fgcolor;
 				context.stroke();
 }else{
-	  context.beginPath();
+	  			context.beginPath();
              	
-				     context.arc(x, y, radius, -(quart) + additionalAngelPI, fixedPer, false);
+				context.arc(x, y, radius, -(quart) + additionalAngelPI, fixedPer, false);
 
 				console.log(-(quart) + additionalAngelPI+"a");
 				console.log(((circ) * current) - quart + additionalAngelPI+"b");
@@ -273,9 +274,9 @@ if(i<bpercent){
                 context.strokeStyle = customSettingsObj.fgcolor;
 				context.stroke();
 	
-	}
+			}
 			
-	i++;
+			i++;
       
 
                 if (curPerc < endPercent) {
