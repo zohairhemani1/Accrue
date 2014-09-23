@@ -54,6 +54,17 @@ function register()
 	var pass = $('#password').val();
 	var verifyPass = $('#verifyPassword').val();
 	
+	var fieldsFilled = false;
+	
+	if(email == "" || pass == "" || verifyPass == "")
+	{
+		fieldsFilled = false;
+	}
+	else
+	{
+		fieldsFilled = true;
+	}
+	
 	var success = function(response) 
 	{
 		response = JSON.parse(response);
@@ -80,9 +91,15 @@ function register()
 	}
 	
 	if(pass == verifyPass){
-		var jsonHelper = new ServiceHelper();
-		jsonHelper.registerUser(JSON_CONSTANTS.POST, '#registerForm' , success, failed);
-		
+		if(fieldsFilled == true)
+		{
+			var jsonHelper = new ServiceHelper();
+			jsonHelper.registerUser(JSON_CONSTANTS.POST, '#registerForm' , success, failed);
+		}
+		else
+		{
+			alert('Please fill all the fields.');
+		}
 	}
 	else{
 		alert('Password Doesnot Match!');
@@ -139,7 +156,8 @@ function expenditure()
 		if(response.success != null) 
 		{
 			successMsg = response.success;
-			alert(successMsg);
+			//alert(successMsg);
+			window.location.href = "main.html";
 		}
 		else {
 			successMsg = response.error;
@@ -152,9 +170,15 @@ function expenditure()
 		console.log(JSON.stringify(response));
 	}
 	
-	var jsonHelper = new ServiceHelper();
-	jsonHelper.expenditure(JSON_CONSTANTS.POST, '#expenditureForm' , success, failed);
-	
+	if(amount == "" || description =="")
+	{
+		alert('Please fill all the fields.');
+	}
+	else
+	{
+		var jsonHelper = new ServiceHelper();
+		jsonHelper.expenditure(JSON_CONSTANTS.POST, '#expenditureForm' , success, failed);
+	}
 	
 }
 

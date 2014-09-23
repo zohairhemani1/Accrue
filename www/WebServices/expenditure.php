@@ -10,7 +10,7 @@ include 'headers/connect_database.php';
 	 $description = $_POST['description'];
 	 $user_id = $_GET['user_id'];
 	 
-     $query ="INSERT INTO expenditure(email_id,amount,description)VALUES('$user_id','$amount','$description')";
+     $query ="INSERT INTO expenditure(email_id,amount,description,timestamp)VALUES('$user_id','$amount','$description',now())";
      $result = mysqli_query($con,$query)
 		or die ("Couldn’t execute query.");
      $returnArray['success'] = "Expenditure Recorded.";
