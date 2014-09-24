@@ -231,11 +231,39 @@ function gear_home_button()
 
 function getTotalExpenditure()
 {	
+	var date = new Date();
+	var hours = date.getHours();
+	var AMorPM = "AM";
+	var accruedPercentage;
+	if(hours > 12)
+	{
+		hours = hours - 12;
+		AMorPM = "PM";
+	}
+	
+	accruedPercentage = (hours / 24) * 100;
+	$('#myStat1').data('percent',accruedPercentage );
+	
+	var minutes = date.getMinutes();
+	var currentTime = hours + ":" + minutes+"" + AMorPM; 
+	
+	$('#myStat1').data('info', currentTime);
+	
+	
 	var success = function(response) 
 	{
 		response = JSON.parse(response);
 		var successMsg;
 		console.log(JSON.stringify(response));
+		
+		var price = response.totalExpenditure
+		var dollars = price.split(".")[0];
+		var cents = price.split(".")[1];
+		var formatedPrice = "<div><span id='dollars'>$"+dollars+"</span>.<span id='cents'>"+cents+"</span></div>";
+		$('.circle-text').empty();
+		$('.circle-text').append(formatedPrice);
+		
+		
 		$('#totalExpenditure').text(response.totalExpenditure);
 		$('#expenditureCount').text(response.expenditureCount);
     } 
