@@ -231,6 +231,9 @@ function gear_home_button()
 
 function getTotalExpenditure()
 {	
+
+
+	
 	var date = new Date();
 	var hours = date.getHours();
 	var AMorPM = "AM";
@@ -241,7 +244,7 @@ function getTotalExpenditure()
 		AMorPM = "PM";
 	}
 	
-	accruedPercentage = (hours / 24) * 100;
+	accruedPercentage = (hours / 12) * 100;
 	$('#myStat1').data('percent',accruedPercentage );
 	
 	var minutes = date.getMinutes();
@@ -263,9 +266,6 @@ function getTotalExpenditure()
 		$('.circle-text').empty();
 		$('.circle-text').append(formatedPrice);
 		
-		
-		$('#totalExpenditure').text(response.totalExpenditure);
-		$('#expenditureCount').text(response.expenditureCount);
     } 
 	
 	var failed = function(response) {
@@ -276,6 +276,7 @@ function getTotalExpenditure()
 	var jsonHelper = new ServiceHelper();
 	jsonHelper.totalExpenditure(JSON_CONSTANTS.GET, success, failed);
 	
+
 	
 }
 

@@ -246,8 +246,8 @@
              	
 				     context.arc(x, y, radius, -(quart) + additionalAngelPI, ((circ) * current) - quart + additionalAngelPI, false);
 
-				console.log(-(quart) + additionalAngelPI+"a");
-				console.log(((circ) * current) - quart + additionalAngelPI+"b");
+				//console.log(-(quart) + additionalAngelPI+"a");
+				//console.log(((circ) * current) - quart + additionalAngelPI+"b");
 
                 if (customSettingsObj.border == 'outline') {
                     context.lineWidth = customSettingsObj.width + 13;
@@ -262,8 +262,8 @@
              	
 				context.arc(x, y, radius, -(quart) + additionalAngelPI, fixedPer, false);
 
-				console.log(-(quart) + additionalAngelPI+"a");
-				console.log(((circ) * current) - quart + additionalAngelPI+"b");
+				//console.log(-(quart) + additionalAngelPI+"a");
+				//console.log(((circ) * current) - quart + additionalAngelPI+"b");
 
                 if (customSettingsObj.border == 'outline') {
                     context.lineWidth = customSettingsObj.width + 13;

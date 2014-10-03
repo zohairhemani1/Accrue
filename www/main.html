@@ -48,12 +48,15 @@
 <div id="expenditure"><center><a href="expenditure.html"> <img src="images/_114510046b61e474182.png" width="30" height="25" class="expenditure" /></a>
   </center>
 </div>
-<div id="totalExpenditure"></div>
-<div id="expenditureCount"> </div>
+<!-- <div id="totalExpenditure"></div>
+<div id="expenditureCount"> </div> -->
 <script src="js/service_helper.js"></script> 
 <script src="js/constants.js"></script> 
 <script src="js/main.js"></script> 
 <script>
+
+	
+	
 	getTotalExpenditure();
 	$("#gearicon").attr("href", APP_CONSTANTS.GEAR);
 	
@@ -63,6 +66,11 @@
 $( document ).ready(function() {
 	
 		$('#myStat1').circliful();
+		
+		var loadingDiv = "<div id='loading' style='display:block;'></div>";
+
+		$('.circle-text').empty();
+		$('.circle-text').append(loadingDiv);
 		
 		
 		
