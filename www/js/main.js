@@ -259,12 +259,26 @@ function getTotalExpenditure()
 		var successMsg;
 		console.log(JSON.stringify(response));
 		
-		var price = response.totalExpenditure
+		var totalExpenditure = response.totalExpenditure
+		
+		var annualIncome = response.annualIncome;
+		var payFrequency = response.payFrequency;
+		var payCheck = response.payCheck;
+		
+		var calculateObj = calculate(annualIncome,payFrequency,payCheck)
+	
+		var price = (calculateObj.hourly*hours).toFixed(1);
+				
+		console.log("Daily: " + calculateObj.daily);
+		console.log("Hourly: " + calculateObj.hourly);
+		console.log("Amount Calculated As Of Now: " + calculateObj.hourly*hours);
+		
 		var dollars = price.split(".")[0];
 		var cents = price.split(".")[1];
 		var formatedPrice = "<div><span id='dollars'>$"+dollars+"</span>.<span id='cents'>"+cents+"</span></div>";
 		$('.circle-text').empty();
 		$('.circle-text').append(formatedPrice);
+		
 		
     } 
 	
