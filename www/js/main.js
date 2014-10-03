@@ -238,6 +238,7 @@ function getTotalExpenditure()
 	var hours = date.getHours();
 	var AMorPM = "AM";
 	var accruedPercentage;
+	var seconds;
 	if(hours > 12)
 	{
 		hours = hours - 12;
@@ -252,6 +253,8 @@ function getTotalExpenditure()
 	
 	$('#myStat1').data('info', currentTime);
 	
+	seconds = (3600 * hours) + (minutes*60);
+	alert(seconds);
 	
 	var success = function(response) 
 	{
@@ -267,11 +270,11 @@ function getTotalExpenditure()
 		
 		var calculateObj = calculate(annualIncome,payFrequency,payCheck)
 	
-		var price = (calculateObj.hourly*hours).toFixed(1);
+		var price = (calculateObj.second*seconds).toFixed(1);
 				
 		console.log("Daily: " + calculateObj.daily);
 		console.log("Hourly: " + calculateObj.hourly);
-		console.log("Amount Calculated As Of Now: " + calculateObj.hourly*hours);
+		console.log("Amount Calculated As Of Now: " + calculateObj.second*seconds);
 		
 		var dollars = price.split(".")[0];
 		var cents = price.split(".")[1];
