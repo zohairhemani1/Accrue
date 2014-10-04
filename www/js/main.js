@@ -253,8 +253,8 @@ function getTotalExpenditure()
 	
 	$('#myStat1').data('info', currentTime);
 	
-	seconds = (3600 * hours) + (minutes*60);
-	alert(seconds);
+	seconds = (3600 * hours) + (minutes*60) + date.getSeconds();
+	//alert(seconds);
 	
 	var success = function(response) 
 	{
@@ -270,7 +270,7 @@ function getTotalExpenditure()
 		
 		var calculateObj = calculate(annualIncome,payFrequency,payCheck)
 	
-		var price = (calculateObj.second*seconds).toFixed(1);
+		var price = (calculateObj.second*seconds).toFixed(2);
 				
 		console.log("Daily: " + calculateObj.daily);
 		console.log("Hourly: " + calculateObj.hourly);
