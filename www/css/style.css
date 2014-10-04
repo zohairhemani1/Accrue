@@ -431,3 +431,7 @@ a:hover { text-decoration:underline; }
 	margin-top: 104px;
 	margin-left: 222px;
 }
+#myStat1
+{
+	display:none;
+}

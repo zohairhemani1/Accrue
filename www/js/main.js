@@ -259,7 +259,8 @@ function getTotalExpenditure()
 	}
 	
 	accruedPercentage = (hours / 12) * 100;
-	$('#myStat1').data('percent',accruedPercentage );
+	
+	
 	
 	var minutes = date.getMinutes();
 	var currentTime = hours + ":" + minutes+"" + AMorPM; 
@@ -271,6 +272,7 @@ function getTotalExpenditure()
 	
 	var success = function(response) 
 	{
+		
 		response = JSON.parse(response);
 		var successMsg;
 		console.log(JSON.stringify(response));
@@ -288,6 +290,19 @@ function getTotalExpenditure()
 		console.log("Daily: " + calculateObj.daily);
 		console.log("Hourly: " + calculateObj.hourly);
 		console.log("Amount Calculated As Of Now: " + calculateObj.second*seconds);
+		
+		var amountInRedPercentage = (response.totalExpenditure / (calculateObj.second*seconds)  *100).toFixed(2);
+		alert('time %: ' + accruedPercentage);
+		alert('expended %: ' + amountInRedPercentage); // total expenditure percentage
+		alert('blue area: ' + ((accruedPercentage /100)*amountInRedPercentage));
+		alert('red area:' + ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)) );
+		
+		$('#myStat1').data('percent',accruedPercentage.toFixed(0) );
+		$('#myStat1').data('bpercent', ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0))
+		
+		$("#myStat1").css("display","block");
+		$('#myStat1').circliful();
+		
 		
 		var dollars = price.split(".")[0];
 		var cents = price.split(".")[1];

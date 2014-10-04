@@ -52,7 +52,7 @@ this.httpRequest = function (request_url, type, formID, dataType , succesCallBac
 	
 	this.totalExpenditure = function(type,successCallBack, failedCallBack){
 		var url = APP_CONSTANTS.BASE_URL + APP_CONSTANTS.TOTAL_EXPENDITURE + APP_CONSTANTS.USER_ID_URL;
-		
+		alert(url);
 		this.httpRequest(url, type, null, null, successCallBack, failedCallBack, true);
 	}
 	
