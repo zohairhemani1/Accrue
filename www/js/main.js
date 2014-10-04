@@ -7,7 +7,7 @@ $(document).ready(function(e) {
 
 function bindElements() {
 	$(document).on("click", "#login_button", login);
-	$(document).on("click", "#register", register);
+	//$(document).on("click", "#register", register());
 	$(document).on("click", "#info_button", info);
 	$(document).on("click", "#expenditureButton", expenditure);
 	$(document).on("click", "#gear_home_button", gear_home_button);
@@ -49,7 +49,6 @@ function login()
 
 function register()
 {
-		
 	var email = $('#email').val();	
 	var pass = $('#password').val();
 	var verifyPass = $('#verifyPassword').val();
