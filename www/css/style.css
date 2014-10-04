@@ -198,7 +198,7 @@ a:hover { text-decoration:underline; }
 	font-weight:bold;
 }
 .form{
-	width: 93%;
+	width: 96%;
 	padding-left:10px;
 	color: #fff;
 	background: none repeat scroll 0% 0% #CCC;
@@ -365,7 +365,7 @@ a:hover { text-decoration:underline; }
 	height: 37px;
 	z-index: 15;
 	margin-left: 12%;
-	margin-top: 70px;
+	margin-top: 85px;
 }
 .login{
 	width: 88%;
@@ -387,7 +387,7 @@ a:hover { text-decoration:underline; }
 
 }
 .freq{
-	width:96.4%;
+	width:96.6%;
 }
 .expenditure{	
 	background: #e5e5e5;
@@ -423,8 +423,8 @@ a:hover { text-decoration:underline; }
 	background-position: center;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 49px;
-	margin-bottom: -69px;
+	margin-top: 60px;
+	margin-bottom: -60px;
 	display:none;
 }
 #expenditure{

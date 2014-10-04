@@ -281,8 +281,6 @@ function getTotalExpenditure()
 		var formatedPrice = "<div><span id='dollars'>$"+dollars+"</span>.<span id='cents'>"+cents+"</span></div>";
 		$('.circle-text').empty();
 		$('.circle-text').append(formatedPrice);
-		
-		
     } 
 	
 	var failed = function(response) {
