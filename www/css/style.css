@@ -156,7 +156,6 @@ a:hover { text-decoration:underline; }
 }
 #Email {
     position: relative;
-    height: 37px;
     z-index: 11;
     margin-left: 3%;
 }
@@ -164,7 +163,7 @@ a:hover { text-decoration:underline; }
     position: relative;
     height: 37px;
     z-index: 11;
-    padding-top:  62px;
+    padding-top: 20px;
     margin-left: 3%;
 }
 #confirm-password{
