@@ -53,6 +53,20 @@ function register()
 	var pass = $('#password').val();
 	var verifyPass = $('#verifyPassword').val();
 	
+	var emailTrue = false;
+	
+	var x = email;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos< 1 || dotpos<atpos+2 || dotpos+2 >= x.length) {
+        alert("Not a valid e-mail address");
+		emailTrue = true;
+    }
+	
+	
+	
+	
+	
 	var fieldsFilled = false;
 	
 	if(email == "" || pass == "" || verifyPass == "")
@@ -90,7 +104,7 @@ function register()
 	}
 	
 	if(pass == verifyPass){
-		if(fieldsFilled == true)
+		if(fieldsFilled == true && emailTrue == false)
 		{
 			var jsonHelper = new ServiceHelper();
 			jsonHelper.registerUser(JSON_CONSTANTS.POST, '#registerForm' , success, failed);
@@ -208,7 +222,7 @@ function getInfo()
 		$("#second_span").text(CommaFormatted(cal_values.second.toFixed(4)));
 		$("#minute_span").text(CommaFormatted(cal_values.minute.toFixed(4)));
 		$("#hourly_span").text(CommaFormatted(cal_values.hourly.toFixed(4)));
-		$("#daily_span").text(CommaFormatted(cal_values.daily));
+		$("#daily_span").text(CommaFormatted(cal_values.daily.toFixed(4)));
 
 		
     } 
