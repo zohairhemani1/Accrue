@@ -258,8 +258,8 @@ function getTotalExpenditure()
 		AMorPM = "PM";
 	}
 	
-	accruedPercentage = (hours / 12) * 100;
-	
+	accruedPercentage = (((hours + 12) + (date.getMinutes()/100)) / 24) * 100;
+	//alert(accruedPercentage);
 	
 	
 	var minutes = date.getMinutes();
@@ -282,6 +282,13 @@ function getTotalExpenditure()
 		var annualIncome = response.annualIncome;
 		var payFrequency = response.payFrequency;
 		var payCheck = response.payCheck;
+		var totalCount = response.expenditureCount;
+		
+		if(totalCount >=1)
+		{
+			$('#plus_image').css('display','none');
+			$('#plusButton').html("<span class='countNumber'>" + totalCount + "</span>");
+		}
 		
 		var calculateObj = calculate(annualIncome,payFrequency,payCheck)
 	
@@ -297,7 +304,7 @@ function getTotalExpenditure()
 		//alert('blue area: ' + ((accruedPercentage /100)*amountInRedPercentage));
 		//alert('red area:' + ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)) );
 		
-		$('#myStat1').data('percent',accruedPercentage.toFixed(0) );
+		$('#myStat1').data('percent', accruedPercentage );
 		$('#myStat1').data('bpercent', ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0))
 		
 		$("#myStat1").css("display","block");
