@@ -306,7 +306,7 @@ function getTotalExpenditure()
 		//alert('blue area: ' + ((accruedPercentage /100)*amountInRedPercentage));
 		//alert('red area:' + ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)) );
 		
-		$('#myStat1').data('percent', accruedPercentage );
+		$('#myStat1').data('percent', accruedPercentage);
 		$('#myStat1').data('bpercent', ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
 		
 	//	console.log(((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
