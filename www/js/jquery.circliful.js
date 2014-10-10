@@ -31,7 +31,7 @@
             var obj = $(this);
             var fill = false;
             var text, info;
-
+			var calcPer=0;
             obj.addClass('circliful');
 
             checkDataAttributes(obj);
@@ -66,16 +66,22 @@
 
                 percent = (($(this).data("part") / total) / 100).toFixed(3);
                 endPercent = ($(this).data("part") / total).toFixed(3)
+				
             } else {
                 if ($(this).data("percent") != undefined) {
                     percent = $(this).data("percent") / 100;
-                    endPercent = $(this).data("percent");
+                    endPercent = $(this).data("percent")+($(this).data("percent")-$(this).data("bpercent"));
 					bpercent=$(this).data("bpercent");
-					//console.log(bpercent);
-                } else {
+					console.log(bpercent);
+                	var calcPer=(percent*100).toFixed(0);
+				} else {
                     percent = settings.percent / 100
                 }
+				
             }
+
+console.log(endPercent);
+console.log(calcPer);
 
             if ($(this).data('info') != undefined) {
                 info = $(this).data('info');
@@ -222,43 +228,18 @@
                     context.fill();
                 }
 
-  context.beginPath();
-             //   context.arc(x, y, radius, -(quart) + additionalAngelPI, ((circ) * current) - quart + additionalAngelPI, false);
-				     context.arc(x, y, radius, -(quart) + additionalAngelPI, ((circ) * current) - quart + additionalAngelPI, false);
-
-                if (customSettingsObj.border == 'outline') {
-                    context.lineWidth = customSettingsObj.width + 13;
-                } else if (customSettingsObj.border == 'inline') {
-                    context.lineWidth = customSettingsObj.width - 13;
-                }
-                context.strokeStyle = customSettingsObj.bfgcolor;	
-             	context.stroke();
 
 
-
-			if(i==bpercent){
+			if(i==calcPer){
+				
+				console.log("equal");
 				fixedPer=((circ) * current) - quart + additionalAngelPI;
 				}
 
-			if(i<bpercent)
+			else if(i>calcPer)
 			{
-                context.beginPath();
-             	
-				     context.arc(x, y, radius, -(quart) + additionalAngelPI, ((circ) * current) - quart + additionalAngelPI, false);
-
-				//console.log(-(quart) + additionalAngelPI+"a");
-				//console.log(((circ) * current) - quart + additionalAngelPI+"b");
-
-                if (customSettingsObj.border == 'outline') {
-                    context.lineWidth = customSettingsObj.width + 13;
-                } else if (customSettingsObj.border == 'inline') {
-                    context.lineWidth = customSettingsObj.width - 13;
-                }
-	
-                context.strokeStyle = customSettingsObj.fgcolor;
-				context.stroke();
-}else{
-	  			context.beginPath();
+                console.log("more");
+				context.beginPath();
              	
 				context.arc(x, y, radius, -(quart) + additionalAngelPI, fixedPer, false);
 
@@ -271,10 +252,45 @@
                     context.lineWidth = customSettingsObj.width - 13;
                 }
 	
+                context.strokeStyle = customSettingsObj.bfgcolor;
+				context.stroke();
+				
+				context.beginPath();
+             	
+				context.arc(x, y, radius, fixedPer, (fixedPer+6.28)-((i-calcPer)*0.0628), true);
+
+				//console.log(-(quart) + additionalAngelPI+"a");
+				//console.log(((circ) * current) - quart + additionalAngelPI+"b");
+
+                if (customSettingsObj.border == 'outline') {
+                    context.lineWidth = customSettingsObj.width + 13;
+                } else if (customSettingsObj.border == 'inline') {
+                    context.lineWidth = customSettingsObj.width - 13;
+                }
+	
                 context.strokeStyle = customSettingsObj.fgcolor;
 				context.stroke();
 	
-			}
+				
+	  			
+			}else{
+				
+				console.log("less");
+
+  context.beginPath();
+             //   context.arc(x, y, radius, -(quart) + additionalAngelPI, ((circ) * current) - quart + additionalAngelPI, false);
+				     context.arc(x, y, radius, -(quart) + additionalAngelPI, ((circ) * current) - quart + additionalAngelPI, false);
+
+                if (customSettingsObj.border == 'outline') {
+                    context.lineWidth = customSettingsObj.width + 13;
+                } else if (customSettingsObj.border == 'inline') {
+                    context.lineWidth = customSettingsObj.width - 13;
+                }
+                context.strokeStyle = customSettingsObj.bfgcolor;	
+             	context.stroke();
+				
+				
+				}
 			
 			i++;
       
