@@ -263,115 +263,101 @@ function gear_home_button()
 
 function getTotalExpenditure()
 {	
-
-
-	
-	var date = new Date();
-	var hours = date.getHours();
-	var hours_24hour = hours;
-	//alert(hours_24hour);
-	var AMorPM = "AM";
-	var accruedPercentage;
-	var seconds;
-	
-	
-	if(hours > 12)
-	{
-		hours = hours - 12;
-		AMorPM = "PM";
-	}
-	
-	
-	accruedPercentage = (((hours_24hour) + (date.getMinutes()/100)) / 24) * 100;
-	//alert(accruedPercentage);
-	
-	
-	var minutes = date.getMinutes();
-	var currentTime = hours + ":" + minutes+"" + AMorPM; 
-	
-	$('#myStat1').data('info', currentTime);
-	
-	seconds = (3600 * hours_24hour) + (minutes*60) + date.getSeconds();
-	//alert(seconds);
-	
-	var success = function(response) 
-	{
+		var date = new Date();
+		var hours = date.getHours();
+		var hours_24hour = hours;
+		//alert(hours_24hour);
+		var AMorPM = "AM";
+		var accruedPercentage;
+		var seconds;
 		
-		response = JSON.parse(response);
-		var successMsg;
-		console.log(JSON.stringify(response));
 		
-		var totalExpenditure = response.totalExpenditure
-		
-		var annualIncome = response.annualIncome;
-		var payFrequency = response.payFrequency;
-		var payCheck = response.payCheck;
-		var totalCount = response.expenditureCount;
-		
-		if(totalCount >=1)
+		if(hours > 12)
 		{
-			$('#plus_image').css('display','none');
-			$('#plusButton').html("<span class='countNumber'>" + totalCount + "</span>");
+			hours = hours - 12;
+			AMorPM = "PM";
 		}
 		
-		var calculateObj = calculate(annualIncome,payFrequency,payCheck)
-	    
-		//alert(calculateObj.second);
-		//alert(seconds);
 		
-		var price = (calculateObj.second*seconds);
+		accruedPercentage = (((hours_24hour) + (date.getMinutes()/100)) / 24) * 100;
 		
-		var progressBar = false;
+		var minutes = date.getMinutes();
 		
-		setInterval(function(){
+		var currentTime = hours + ":" + minutes+"" + AMorPM;
+
+		$('#myStat1').data('info', currentTime);
+		
+		seconds = (3600 * hours_24hour) + (minutes*60) + date.getSeconds();
+		
+		var success = function(response) 
+		{
+			response = JSON.parse(response);
+			var successMsg;
+			console.log(JSON.stringify(response));
 			
-			price = price + calculateObj.second;
-				
-			//console.log("Daily: " + calculateObj.daily);
-			//console.log("Hourly: " + calculateObj.hourly);
-			//console.log("Amount Calculated As Of Now: " + calculateObj.second*seconds);
+			var totalExpenditure = response.totalExpenditure
 			
-			var amountInRedPercentage = (response.totalExpenditure / (calculateObj.second*seconds)  *100).toFixed(2);
-			//amountInRedPercentage=10;
+			var annualIncome = response.annualIncome;
+			var payFrequency = response.payFrequency;
+			var payCheck = response.payCheck;
+			var totalCount = response.expenditureCount;
 			
-			//alert('time %: ' + accruedPercentage);
-			//alert('expended %: ' + amountInRedPercentage); // total expenditure percentage
-			//alert('blue area: ' + ((accruedPercentage /100)*amountInRedPercentage));
-			//alert('red area:' + ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)) );
-			
-			$('#myStat1').data('percent', accruedPercentage);
-			$('#myStat1').data('bpercent', ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
-			
-		//	console.log(((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
-			
-			$("#myStat1").css("display","block");
-			
-			if(progressBar == false)
+			if(totalCount >=1)
 			{
-				$('#myStat1').circliful();	
-				progressBar = true;
+				$('#plus_image').css('display','none');
+				$('#plusButton').html("<span class='countNumber'>" + totalCount + "</span>");
 			}
-			var dollars = Math.floor(price);
-			var cents = ((price - Math.floor(price))*100).toFixed(0);
-			var formatedPrice = "<div><span id='dollars'>$"+dollars+"</span>.<span id='cents'>"+cents+"</span></div>";
-			$('.circle-text').empty();
-			$('.circle-text').append(formatedPrice);
+			
+			var calculateObj = calculate(annualIncome,payFrequency,payCheck);
+			
+			var price = (calculateObj.second*seconds);
 			
 			
-	},1000);
+			setInterval(function(){
+				//alert(price);
+				//alert(calculateObj.second);
+				price =  price + calculateObj.second;
+				
+				//console.log(Math.floor(price));
+		
+				//console.log("Daily: " + calculateObj.daily);
+				//console.log("Hourly: " + calculateObj.hourly);
+				//console.log("Amount Calculated As Of Now: " + calculateObj.second*seconds);
+				
+				var amountInRedPercentage = (response.totalExpenditure / (calculateObj.second*seconds)  *100).toFixed(2);
+				
+				$('#myStat1').data('percent', accruedPercentage);
+				$('#myStat1').data('bpercent', ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
+				
+				$("#myStat1").css("display","block");
+				
+				var dollars = Math.floor(price);
+				var cents = ((price - Math.floor(price))*100).toFixed(0);
+				var formatedPrice = "<div><span id='dollars'>$"+dollars+"</span>.<span id='cents'>"+cents+"</span></div>";
 		
 			
+				formatedPrice = "<div><span id='dollars'>$"+dollars+"</span>.<span id='cents'>"+cents+"</span></div>";
+				$('.circle-text').empty();
+				$('.circle-text').append(formatedPrice);
+				
+			},1000);
+			
+			$('#myStat1').circliful();
+			
+			
+		} 
+	
+		var failed = function(response) {
+			alert('failed');
+			console.log(JSON.stringify(response));
+		}
 		
-    } 
-	
-	var failed = function(response) {
-		alert('failed');
-		console.log(JSON.stringify(response));
-	}
-	
-	var jsonHelper = new ServiceHelper();
-	jsonHelper.totalExpenditure(JSON_CONSTANTS.GET, success, failed);
-	
+		
+
+		var jsonHelper = new ServiceHelper();
+		jsonHelper.totalExpenditure(JSON_CONSTANTS.GET, success, failed);
+		
+		
 
 	
 }

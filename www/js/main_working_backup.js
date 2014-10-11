@@ -319,49 +319,34 @@ function getTotalExpenditure()
 		//alert(calculateObj.second);
 		//alert(seconds);
 		
-		var price = (calculateObj.second*seconds);
-		
-		var progressBar = false;
-		
-		setInterval(function(){
-			
-			price = price + calculateObj.second;
+		var price = (calculateObj.second*seconds).toFixed(2);
 				
-			//console.log("Daily: " + calculateObj.daily);
-			//console.log("Hourly: " + calculateObj.hourly);
-			//console.log("Amount Calculated As Of Now: " + calculateObj.second*seconds);
-			
-			var amountInRedPercentage = (response.totalExpenditure / (calculateObj.second*seconds)  *100).toFixed(2);
-			//amountInRedPercentage=10;
-			
-			//alert('time %: ' + accruedPercentage);
-			//alert('expended %: ' + amountInRedPercentage); // total expenditure percentage
-			//alert('blue area: ' + ((accruedPercentage /100)*amountInRedPercentage));
-			//alert('red area:' + ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)) );
-			
-			$('#myStat1').data('percent', accruedPercentage);
-			$('#myStat1').data('bpercent', ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
-			
-		//	console.log(((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
-			
-			$("#myStat1").css("display","block");
-			
-			if(progressBar == false)
-			{
-				$('#myStat1').circliful();	
-				progressBar = true;
-			}
-			var dollars = Math.floor(price);
-			var cents = ((price - Math.floor(price))*100).toFixed(0);
-			var formatedPrice = "<div><span id='dollars'>$"+dollars+"</span>.<span id='cents'>"+cents+"</span></div>";
-			$('.circle-text').empty();
-			$('.circle-text').append(formatedPrice);
-			
-			
-	},1000);
+		console.log("Daily: " + calculateObj.daily);
+		console.log("Hourly: " + calculateObj.hourly);
+		console.log("Amount Calculated As Of Now: " + calculateObj.second*seconds);
 		
-			
+		var amountInRedPercentage = (response.totalExpenditure / (calculateObj.second*seconds)  *100).toFixed(2);
+		//amountInRedPercentage=10;
 		
+		//alert('time %: ' + accruedPercentage);
+		//alert('expended %: ' + amountInRedPercentage); // total expenditure percentage
+		//alert('blue area: ' + ((accruedPercentage /100)*amountInRedPercentage));
+		//alert('red area:' + ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)) );
+		
+		$('#myStat1').data('percent', accruedPercentage);
+		$('#myStat1').data('bpercent', ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
+		
+	//	console.log(((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
+		
+		$("#myStat1").css("display","block");
+		$('#myStat1').circliful();
+		
+		
+		var dollars = price.split(".")[0];
+		var cents = price.split(".")[1];
+		var formatedPrice = "<div><span id='dollars'>$"+dollars+"</span>.<span id='cents'>"+cents+"</span></div>";
+		$('.circle-text').empty();
+		$('.circle-text').append(formatedPrice);
     } 
 	
 	var failed = function(response) {
