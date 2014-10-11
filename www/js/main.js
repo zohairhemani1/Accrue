@@ -160,9 +160,15 @@ function info()
 		console.log(JSON.stringify(response));
 	}
 	
-	var jsonHelper = new ServiceHelper();
-	jsonHelper.infoUser(JSON_CONSTANTS.POST, '#infoForm' , success, failed);
-	
+	if(annualIncome == "" || payCheck == "")
+	{
+		alert('Please fill all the fields');
+	}
+	else
+	{
+		var jsonHelper = new ServiceHelper();
+		jsonHelper.infoUser(JSON_CONSTANTS.POST, '#infoForm' , success, failed);
+	}
 }
 
 function expenditure()
