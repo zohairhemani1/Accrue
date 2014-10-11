@@ -249,16 +249,21 @@ function getTotalExpenditure()
 	
 	var date = new Date();
 	var hours = date.getHours();
+	var hours_24hour = hours;
+	alert(hours_24hour);
 	var AMorPM = "AM";
 	var accruedPercentage;
 	var seconds;
+	
+	
 	if(hours > 12)
 	{
 		hours = hours - 12;
 		AMorPM = "PM";
 	}
 	
-	accruedPercentage = (((hours + 12) + (date.getMinutes()/100)) / 24) * 100;
+	
+	accruedPercentage = (((hours_24hour) + (date.getMinutes()/100)) / 24) * 100;
 	//alert(accruedPercentage);
 	
 	
@@ -267,7 +272,7 @@ function getTotalExpenditure()
 	
 	$('#myStat1').data('info', currentTime);
 	
-	seconds = (3600 * hours) + (minutes*60) + date.getSeconds();
+	seconds = (3600 * hours_24hour) + (minutes*60) + date.getSeconds();
 	//alert(seconds);
 	
 	var success = function(response) 
@@ -291,7 +296,10 @@ function getTotalExpenditure()
 		}
 		
 		var calculateObj = calculate(annualIncome,payFrequency,payCheck)
-	
+	    
+		alert(calculateObj.second);
+		alert(seconds);
+		
 		var price = (calculateObj.second*seconds).toFixed(2);
 				
 		console.log("Daily: " + calculateObj.daily);
