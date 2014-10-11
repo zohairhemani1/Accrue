@@ -250,7 +250,7 @@ function getTotalExpenditure()
 	var date = new Date();
 	var hours = date.getHours();
 	var hours_24hour = hours;
-	alert(hours_24hour);
+	//alert(hours_24hour);
 	var AMorPM = "AM";
 	var accruedPercentage;
 	var seconds;
@@ -297,8 +297,8 @@ function getTotalExpenditure()
 		
 		var calculateObj = calculate(annualIncome,payFrequency,payCheck)
 	    
-		alert(calculateObj.second);
-		alert(seconds);
+		//alert(calculateObj.second);
+		//alert(seconds);
 		
 		var price = (calculateObj.second*seconds).toFixed(2);
 				
