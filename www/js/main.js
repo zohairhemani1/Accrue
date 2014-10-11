@@ -2,6 +2,17 @@ $(document).ready(function(e) {
 	bindElements();
 });
 
+var rawAmount = "";
+
+$('#input_amount').bind('keyup',function(evt){
+	   //alert(String.fromCharCode(evt.keyCode));
+	   var amount = $('#input_amount').val();
+	   rawAmount = rawAmount + String.fromCharCode(evt.keyCode);
+	   //alert('rawAmount: ' + rawAmount );
+	   convertToFloat(rawAmount, evt, 2)
+});
+
+
 	
 
 
@@ -159,6 +170,8 @@ function expenditure()
 	
 	var amount = $('#input_amount').val();	
 	var description = $('#input_description').val();
+	
+	convertToFloat(amount, this, 2);
 	
 	var success = function(response) 
 	{
@@ -383,3 +396,49 @@ function CommaFormatted(amount)
 	amount = minus + amount;
 	return amount;
 }
+
+
+function convertToFloat(obj, evt, decimal) {
+
+	var value = obj.replace(/[^0-9.]/g,'');
+	var ascii = evt.which;
+	
+	//alert('value:' + value);
+	//alert('ascii: ' + ascii);
+	var convertedNum = parseFloat(value);
+	
+	if (ascii == 8) 
+	{ 	//backspace
+	  	//convertedNum = 0;
+		//rawAmount = "";
+		if (value == 0) 
+		{
+			convertedNum = 0;
+		} 
+		else 
+		{
+			//$('#input_amount').val();
+			convertedNum = ($('#input_amount').val()/10);
+			
+		}
+		// ascii codes between 48 and 57 are numbers
+		//don't react to other keyboard inputs
+		
+	}
+	 
+	else if (ascii >= 48 && ascii <= 57) 
+	{
+		convertedNum = value/100;
+	}
+	
+	$('#input_amount').val(convertedNum.toFixed(2));
+	
+	obj  = convertedNum.toFixed(decimal);
+	//alert('returned: ' + obj);
+	
+	return;
+	
+}
+
+
+
