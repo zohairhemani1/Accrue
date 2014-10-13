@@ -72,7 +72,6 @@
                     percent = $(this).data("percent") / 100;
                     endPercent = $(this).data("percent")+($(this).data("percent")-$(this).data("bpercent"));
 					bpercent=$(this).data("bpercent");
-					console.log(bpercent);
                 	var calcPer=(percent*100).toFixed(0);
 				} else {
                     percent = settings.percent / 100
@@ -80,8 +79,6 @@
 				
             }
 
-console.log(endPercent);
-console.log(calcPer);
 
             if ($(this).data('info') != undefined) {
                 info = $(this).data('info');
@@ -180,7 +177,7 @@ console.log(calcPer);
              * @param factor
              */
             function addInfoText(obj, factor) {
-                $('<span></span>')
+                $('<span id="time_txt"></span>')
                     .appendTo(obj)
                     .addClass('circle-info-half')
                     .css(
@@ -218,7 +215,7 @@ console.log(calcPer);
                 context.beginPath();
                 context.arc(x, y, radius, endAngle, startAngle, false);
 
-                context.lineWidth = customSettingsObj.bordersize + 1;
+                context.lineWidth = customSettingsObj.bordersize +1;
 
                 context.strokeStyle = customSettingsObj.bgcolor;
                 context.stroke();
@@ -231,20 +228,15 @@ console.log(calcPer);
 
 
 			if(i==calcPer){
-				
-				console.log("equal");
-				fixedPer=((circ) * current) - quart + additionalAngelPI;
+					fixedPer=((circ) * current) - quart + additionalAngelPI;
 				}
 
 			else if(i>calcPer)
 			{
-                console.log("more");
 				context.beginPath();
-             	
+	
 				context.arc(x, y, radius, -(quart) + additionalAngelPI, fixedPer, false);
 
-				//console.log(-(quart) + additionalAngelPI+"a");
-				//console.log(((circ) * current) - quart + additionalAngelPI+"b");
 
                 if (customSettingsObj.border == 'outline') {
                     context.lineWidth = customSettingsObj.width + 13;
@@ -259,9 +251,6 @@ console.log(calcPer);
              	
 				context.arc(x, y, radius, fixedPer, (fixedPer+6.28)-((i-calcPer)*0.0628), true);
 
-				//console.log(-(quart) + additionalAngelPI+"a");
-				//console.log(((circ) * current) - quart + additionalAngelPI+"b");
-
                 if (customSettingsObj.border == 'outline') {
                     context.lineWidth = customSettingsObj.width + 13;
                 } else if (customSettingsObj.border == 'inline') {
@@ -275,11 +264,9 @@ console.log(calcPer);
 	  			
 			}else{
 				
-				console.log("less");
-
-  context.beginPath();
-             //   context.arc(x, y, radius, -(quart) + additionalAngelPI, ((circ) * current) - quart + additionalAngelPI, false);
-				     context.arc(x, y, radius, -(quart) + additionalAngelPI, ((circ) * current) - quart + additionalAngelPI, false);
+ 				context.beginPath();
+       
+				context.arc(x, y, radius, -(quart) + additionalAngelPI, ((circ) * current) - quart + additionalAngelPI, false);
 
                 if (customSettingsObj.border == 'outline') {
                     context.lineWidth = customSettingsObj.width + 13;

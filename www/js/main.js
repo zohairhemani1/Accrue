@@ -5,10 +5,8 @@ $(document).ready(function(e) {
 var rawAmount = "";
 
 $('#input_amount').bind('keyup',function(evt){
-	   //alert(String.fromCharCode(evt.keyCode));
 	   var amount = $('#input_amount').val();
 	   rawAmount = rawAmount + String.fromCharCode(evt.keyCode);
-	   //alert('rawAmount: ' + rawAmount );
 	   convertToFloat(rawAmount, evt, 2)
 });
 
@@ -37,7 +35,7 @@ function login()
 		if(response.success != null) 
 		{
 			successMsg = response.success;
-			alert(successMsg);
+			//alert(successMsg);
 		}
 		else {
 			successMsg = response.error;
@@ -98,7 +96,7 @@ function register()
 		if(response.success != null) 
 		{
 			successMsg = response.success;
-			alert(successMsg);
+			//alert(successMsg);
 			var user_id = response.email_id;
 			localStorage.setItem("user_id", user_id);
 			window.location.href = "info.html";
@@ -146,7 +144,7 @@ function info()
 		if(response.success != null) 
 		{
 			successMsg = response.success;
-			alert(successMsg);
+			//alert(successMsg);
 			window.location.href="main.html";
 		}
 		else {
@@ -188,7 +186,6 @@ function expenditure()
 		if(response.success != null) 
 		{
 			successMsg = response.success;
-			//alert(successMsg);
 			window.location.href = "main.html";
 		}
 		else {
@@ -263,29 +260,20 @@ function gear_home_button()
 
 function getTotalExpenditure()
 {	
-
-
-	
 	var date = new Date();
 	var hours = date.getHours();
 	var hours_24hour = hours;
-	//alert(hours_24hour);
 	var AMorPM = "AM";
 	var accruedPercentage;
 	var seconds;
-	
-	
+
 	if(hours > 12)
 	{
 		hours = hours - 12;
 		AMorPM = "PM";
 	}
 	
-	
-	//accruedPercentage = (((hours_24hour) + (date.getMinutes()/100)) / 24) * 100;
 	accruedPercentage = (((hours_24hour) + (date.getMinutes()/60)) / 24) * 100; // double check this minutes divide part
-	//alert(accruedPercentage);
-	
 	
 	var minutes = date.getMinutes();
 	if(minutes<=9)
@@ -293,14 +281,11 @@ function getTotalExpenditure()
 		minutes = "0"+minutes;
 	}
 	
-	
-	
 	var currentTime = hours + ":" + minutes+"" + AMorPM; 
 	
 	$('#myStat1').data('info', currentTime);
 	
 	seconds = (3600 * hours_24hour) + (minutes*60) + date.getSeconds();
-	//alert(seconds);
 	
 	var success = function(response) 
 	{
@@ -324,29 +309,27 @@ function getTotalExpenditure()
 		
 		var calculateObj = calculate(annualIncome,payFrequency,payCheck)
 	    
-		//alert(calculateObj.second);
-		//alert(seconds);
 		
 		var price = (calculateObj.second*seconds);
 		
 		var progressBar = false;
-		
+		var ii =0;
 		setInterval(function(){
 			
+			var date_dynamic = new Date();
+			var currentMinutes_dynamic = date_dynamic.getMinutes();
+			
+			if(currentMinutes_dynamic<=9)
+			{
+				currentMinutes_dynamic = "0"+currentMinutes_dynamic;
+			}
+					
+			var currentTime = hours + ":" + currentMinutes_dynamic+"" + AMorPM;
+			
+			$('#time_txt').text(currentTime+"");
 			price = price + calculateObj.second;
-				
-			//console.log("Daily: " + calculateObj.daily);
-			//console.log("Hourly: " + calculateObj.hourly);
-			//console.log("Amount Calculated As Of Now: " + calculateObj.second*seconds);
 			
 			var amountInRedPercentage = (response.totalExpenditure / (calculateObj.second*seconds)  *100).toFixed(2);
-			//amountInRedPercentage=10;
-			
-			//alert('time %: ' + accruedPercentage);
-			//alert('expended %: ' + amountInRedPercentage); // total expenditure percentage
-			//alert('blue area: ' + ((accruedPercentage /100)*amountInRedPercentage));
-			//alert('red area:' + ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)) );
-			
 			
 			accruedPercentage = Math.ceil(accruedPercentage);
 			
@@ -354,15 +337,13 @@ function getTotalExpenditure()
 			
 			if((((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0)) <= -1)
 			{
-				//alert('less than 1');
 				$('#myStat1').data('bpercent', 2);
 			}
 			else
 			{
 				$('#myStat1').data('bpercent', ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
 			}
-		//	console.log(((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
-			
+		
 			$("#myStat1").css("display","block");
 			
 			if(progressBar == false)
@@ -474,7 +455,6 @@ function convertToFloat(obj, evt, decimal) {
 	$('#input_amount').val(convertedNum.toFixed(2));
 	
 	obj  = convertedNum.toFixed(decimal);
-	//alert('returned: ' + obj);
 	
 	return;
 	
