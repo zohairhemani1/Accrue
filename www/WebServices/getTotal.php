@@ -8,9 +8,11 @@ include 'headers/connect_database.php';
 	 $returnArray = array();
 	 $user_id = $_GET['user_id'];
 	 
-	 $query = "SELECT i.*, sum(`amount`) AS sum, count(*) AS count FROM `expenditure` e, `info` i
-	 				WHERE timestamp > DATE_ADD(NOW(), INTERVAL -24 HOUR) AND e.email_id = i.email_id
-					group by `email_id` HAVING `email_id` = '$user_id'";
+	 $query = "select i.*, ifnull(sum(amount),0) as sum, CASE
+        WHEN count('e.id') = 1 AND isnull(sum(amount)) THEN 0 ELSE count('e.id') END AS count from info i 
+				left outer join expenditure e on e.email_id = i.email_id 
+				where i.email_id = '$user_id'
+				group by i.email_id";
 	
 					
 	 $result = mysqli_query($con,$query);

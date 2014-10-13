@@ -282,11 +282,19 @@ function getTotalExpenditure()
 	}
 	
 	
-	accruedPercentage = (((hours_24hour) + (date.getMinutes()/100)) / 24) * 100;
+	//accruedPercentage = (((hours_24hour) + (date.getMinutes()/100)) / 24) * 100;
+	accruedPercentage = (((hours_24hour) + (date.getMinutes()/60)) / 24) * 100; // double check this minutes divide part
 	//alert(accruedPercentage);
 	
 	
 	var minutes = date.getMinutes();
+	if(minutes<=9)
+	{
+		minutes = "0"+minutes;
+	}
+	
+	
+	
 	var currentTime = hours + ":" + minutes+"" + AMorPM; 
 	
 	$('#myStat1').data('info', currentTime);
@@ -339,9 +347,20 @@ function getTotalExpenditure()
 			//alert('blue area: ' + ((accruedPercentage /100)*amountInRedPercentage));
 			//alert('red area:' + ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)) );
 			
-			$('#myStat1').data('percent', accruedPercentage);
-			$('#myStat1').data('bpercent', ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
 			
+			accruedPercentage = Math.ceil(accruedPercentage);
+			
+			$('#myStat1').data('percent', accruedPercentage);
+			
+			if((((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0)) <= -1)
+			{
+				//alert('less than 1');
+				$('#myStat1').data('bpercent', 2);
+			}
+			else
+			{
+				$('#myStat1').data('bpercent', ((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
+			}
 		//	console.log(((accruedPercentage ) - ((accruedPercentage /100)*amountInRedPercentage)).toFixed(0));
 			
 			$("#myStat1").css("display","block");
