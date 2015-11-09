@@ -1,0 +1,43 @@
+.circliful {
+    position: relative; 
+}
+
+.circle-text, .circle-info, .circle-text-half, .circle-info-half {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+	color:#a6a7ab;
+}
+
+.circle-info, .circle-info-half {
+	color: #9a9b9f;
+}
+
+.circliful .fa {
+	margin: -10px 3px 0 3px;
+	position: relative;
+	bottom: 4px;
+}
+
+#cents
+{
+	font-size:26px;
+	font-family:Myriad Pro;
+}
+#dollars
+{
+	font-family:Myriad Pro;
+
+}
+
+[data-fill]
+{
+	background-color:#FFF !important;
+}
+[data-info]
+{
+	font-family:Myriad Pro;
+	margin-left:10px;
+	font-size:18px;
+}
