@@ -33,7 +33,8 @@
 
 [data-fill]
 {
-	background-color:#FFF !important;
+	/*background-color:#FFF !important;*/
+	background:url(../images/background.png);
 }
 [data-info]
 {
